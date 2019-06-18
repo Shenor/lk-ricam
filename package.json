@@ -1,0 +1,33 @@
+{
+  "name": "Client",
+  "version": "1.0.0",
+  "description": "Пример личного кабинета с базой данных в формате json.",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.0",
+    "hbs": "^4.0.4",
+    "mongoose": "^5.5.10",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shenor/userAkk.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shenor/userAkk/issues"
+  },
+  "homepage": "https://github.com/Shenor/userAkk#readme"
+}
