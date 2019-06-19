@@ -1,17 +1,17 @@
-const Client = require('./../database');
-
-require('./../database');
+const {Client, Equipment} = require('./../database');
 
 module.exports.createClient = function (req, res) {
 
-    req.on('data', (data) => {
+    req.on('data', (data) => {    
         let body = JSON.parse(data);
+
+        const user = new Client({name, legalAdress, actualAdress, contractStatus, contact, connect} = body);
+        const equip = new Equipment({fiscal, barcodeScanner, moneyBox, switchboard, monoBlock, printer, libra} = body);
 
         console.log(body);
 
-        const user = new Client(body);
-
-        user.save();
+        user.save().then().catch((e) => console.log(e));
+        equip.save().then((equip) => {console.log(equip + 'Equip сработал');});
     });
 };
 
@@ -26,7 +26,7 @@ module.exports.deleteClient = function (req, res) {
         
         Client
             .find({name: body.deleteName})
-            .remove().then(() => {console.log("Removed!")});
+            .remove().then(() => {console.log(`${body.deleteName} was Removed!`)});
     });
 };
 

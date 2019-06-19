@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-require('./public/schema/client_model');
+require('./src/models/client_model');
+require('./src/models/euipment_model');
 
 mongoose.Promise = global.Promise;
 
@@ -9,6 +10,6 @@ mongoose.connect('mongodb://localhost/clients', {useNewUrlParser: true})
     .catch((e) => console.log(e));
 
 const Client = mongoose.model('clients');
+const Equipment = mongoose.model('equipment');
 
-
-module.exports = Client;
+module.exports = {Client, Equipment};

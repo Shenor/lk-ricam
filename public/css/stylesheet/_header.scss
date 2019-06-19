@@ -1,0 +1,113 @@
+.panel-header {
+    color: white;
+    background-color: $general-color;
+
+      .button-delete,
+      .btn-close{
+        background-color: $general-color;
+        border-color: $border-color;
+        color: white;
+      } 
+
+      .form-select {
+        color: black;
+        width: 100%;
+      }
+
+      .btn-plus {
+        left: 0;
+      }
+      
+      .btn-delete {
+        @extend .btn-plus;
+        top: 55px;
+      }
+
+      .panel-nav {
+        margin-left: 10px;
+      }
+
+      /* inputs with dynamics placeholder*/
+
+      .form-label{
+        font-size: 0.9em;
+        padding: 0;
+        padding-left: 10px
+    }
+      .form-group-label{
+        margin-top: 13px;
+    }
+    
+      .cool-input {
+        box-sizing: border-box;
+        width: 100%;
+        position: relative;
+        font-size: 16px;
+    }
+    
+      .cool-input__input {
+        box-sizing: border-box;
+        background: none;
+        width: 100%;
+        padding: 1.2em 1em 0.8em;
+        position: relative;
+        z-index: 2;
+        font-size: 1em;
+    }
+    
+      .cool-input__input:focus {
+        outline: none;
+    }
+    
+      .cool-input__placeholder {
+        box-sizing: border-box;
+        border: none;
+        background: none;
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+        padding-left: 1em;
+        left:0;
+        top: 50%;
+        line-height: 1em;
+        margin-top: -0.5em;
+        color: #777;
+        transition: all 0.2s ease;
+    }
+  
+      .cool-input__input_filled + .cool-input__placeholder,
+      .cool-input__input:focus + .cool-input__placeholder {
+        font-size: 0.9em;
+        top: -20px;
+        margin-top: 0.1em;
+        font-weight: 500;
+        color: #3b4351;
+    }
+
+    .form-fieldset-createModal-equipmentList{
+        box-shadow: 0 0.05rem 0.2rem rgba(48,55,66,.3);
+        padding: .6rem;
+    }
+    
+    
+    .divider-createModal-equipmentList{
+        margin: .2rem 0 .6rem 0 !important;
+    }
+
+    .icon-createModal-equipmentList-fn{ 
+        top: -.7rem;
+        right: 0;
+        z-index: 1;
+    }
+
+    .form-fieldset {
+      margin-top: -.6rem;
+    }
+
+    .form-fieldset-contact,
+    .form-fieldset-connect{
+      margin-top: .4rem;
+      margin-bottom: 0;
+    }
+  
+}

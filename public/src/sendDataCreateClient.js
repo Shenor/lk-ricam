@@ -7,13 +7,13 @@ export default function sendDataCreateClient() {
           contractStatus: '',
           contact: [],
           connect: [],
-          fiscal:{},
-          barcodeScanner: {},
-          moneyBox: {},
-          switchboard: {},
-          monoBlock: {},
-          printer: {},
-          libra: {}
+          fiscal:[],
+          barcodeScanner: [],
+          moneyBox: [],
+          switchboard: [],
+          monoBlock: [],
+          printer: [],
+          libra: []
         },
         bufferContact = [],
         bufferConnect = [];
@@ -110,15 +110,15 @@ export default function sendDataCreateClient() {
         body.connect = bufferConnect;
         
         console.log(body);
-        //  $.ajax({
-        //    type: "POST",
-        //    url: "http://localhost:3000/createClient",
-        //    crossDomian: true,
-        //    dataType: "json",
-        //    data: JSON.stringify(body)
-        //  }).done(function (res) {
-        //    console.log(res);
-        //  });
-        // console.log(body);
+         $.ajax({
+           type: "POST",
+           url: "http://localhost:3000/createClient",
+           crossDomian: true,
+           dataType: "json",
+           data: JSON.stringify(body)
+         }).done(function (res) {
+           console.log(res);
+         });
+        console.log(body);
 });
 }

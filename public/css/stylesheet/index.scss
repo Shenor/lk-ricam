@@ -1,0 +1,74 @@
+/*-----------SCSS---------------*/
+
+$general-color:  #0B5BA6;
+$border-color: #bcc3ce;
+
+@import 'fieldset';
+@import 'header';
+@import 'margins';
+@import 'buttons';
+@import 'pagination';
+@import'menu';
+
+.icon {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+i {
+  font-size: 13px;
+}
+
+.show {
+    display: flex;
+}
+  
+.hide {
+    display: none;
+}
+
+.divider {
+    border-top: .05rem solid $border-color;
+}
+
+.modal-create-page-1{
+    max-width: 700px !important;
+}
+  
+  .modal-create-page-2{
+    max-width: 1000px !important;
+}
+
+#main-select{
+    width: 25%;
+    right: 0;
+}
+
+.table {
+    height: 80px;
+
+    .tab-title {
+        font-size: 13px;
+      }
+}
+
+//Необработанный код
+
+/* Modals */
+.page-item{
+  flex: none !important;
+  width: 100px;
+}
+
+.form-fieldset-equipmentList{
+  padding: 1rem .1rem;
+}
+
+.tab .tab-item.active a{
+  border-bottom-color: $general-color;
+  color: $general-color;
+}
+
+.tab .tab-item a:focus, .tab .tab-item a:hover {
+  color: $general-color;
+}

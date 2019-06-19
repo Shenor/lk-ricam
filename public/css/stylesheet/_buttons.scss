@@ -1,0 +1,22 @@
+/*------------Buttons--------*/
+
+.btn{
+      border-color: $general-color;
+      color: $general-color;
+
+    &:focus,
+    &:hover {
+      background: #f1f1fc;
+      border-color: $general-color;
+      text-decoration: none;
+    }
+  }
+  
+  .btn.active, .btn:active {
+    background: $general-color;
+    border-color: darken($general-color, 20%);
+  }
+  
+  
+  
+  /*------------------------*/

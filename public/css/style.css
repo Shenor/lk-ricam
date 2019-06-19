@@ -1,0 +1,263 @@
+/*-----------SCSS---------------*/
+/*---Form-Fieldset--*/
+.content .form-fieldset {
+  margin-top: .2rem;
+}
+
+.form-fieldset {
+  margin-top: 10px;
+  border: 1px solid #bcc3ce;
+  padding: 2px;
+}
+.form-fieldset .form-legend {
+  background: #0B5BA6;
+  padding: 5px 10px;
+  box-shadow: 0 0.05rem 0.2rem rgba(48, 55, 66, 0.3);
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-bottom: 0;
+  color: white;
+}
+.form-fieldset .icon-edit-span-modal {
+  display: inline-block;
+  margin-left: 5px;
+  border-left: white solid 2px;
+  padding-left: 8px;
+}
+.form-fieldset .form-input-contact-dynamics,
+.form-fieldset .form-input-connect-dynamics,
+.form-fieldset .third-select {
+  border: none;
+}
+
+/*------------------*/
+.panel-header {
+  color: white;
+  background-color: #0B5BA6;
+  /* inputs with dynamics placeholder*/
+}
+.panel-header .button-delete,
+.panel-header .btn-close {
+  background-color: #0B5BA6;
+  border-color: #bcc3ce;
+  color: white;
+}
+.panel-header .form-select {
+  color: black;
+  width: 100%;
+}
+.panel-header .btn-plus, .panel-header .btn-delete {
+  left: 0;
+}
+.panel-header .btn-delete {
+  top: 55px;
+}
+.panel-header .panel-nav {
+  margin-left: 10px;
+}
+.panel-header .form-label {
+  font-size: 0.9em;
+  padding: 0;
+  padding-left: 10px;
+}
+.panel-header .form-group-label {
+  margin-top: 13px;
+}
+.panel-header .cool-input {
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+  font-size: 16px;
+}
+.panel-header .cool-input__input {
+  box-sizing: border-box;
+  background: none;
+  width: 100%;
+  padding: 1.2em 1em 0.8em;
+  position: relative;
+  z-index: 2;
+  font-size: 1em;
+}
+.panel-header .cool-input__input:focus {
+  outline: none;
+}
+.panel-header .cool-input__placeholder {
+  box-sizing: border-box;
+  border: none;
+  background: none;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  padding-left: 1em;
+  left: 0;
+  top: 50%;
+  line-height: 1em;
+  margin-top: -0.5em;
+  color: #777;
+  transition: all 0.2s ease;
+}
+.panel-header .cool-input__input_filled + .cool-input__placeholder,
+.panel-header .cool-input__input:focus + .cool-input__placeholder {
+  font-size: 0.9em;
+  top: -20px;
+  margin-top: 0.1em;
+  font-weight: 500;
+  color: #3b4351;
+}
+.panel-header .form-fieldset-createModal-equipmentList {
+  box-shadow: 0 0.05rem 0.2rem rgba(48, 55, 66, 0.3);
+  padding: .6rem;
+}
+.panel-header .divider-createModal-equipmentList {
+  margin: .2rem 0 .6rem 0 !important;
+}
+.panel-header .icon-createModal-equipmentList-fn {
+  top: -.7rem;
+  right: 0;
+  z-index: 1;
+}
+.panel-header .form-fieldset {
+  margin-top: -.6rem;
+}
+.panel-header .form-fieldset-contact,
+.panel-header .form-fieldset-connect {
+  margin-top: .4rem;
+  margin-bottom: 0;
+}
+
+.mt-2 {
+  margin-top: .6rem !important;
+}
+
+.mt-4 {
+  margin-top: .8rem !important;
+}
+
+.mt-6 {
+  margin-top: 1rem !important;
+}
+
+.mt-8 {
+  margin-top: 1.2rem !important;
+}
+
+.mt-10 {
+  margin-top: 1.5rem !important;
+}
+
+/*------------Buttons--------*/
+.btn {
+  border-color: #0B5BA6;
+  color: #0B5BA6;
+}
+.btn:focus, .btn:hover {
+  background: #f1f1fc;
+  border-color: #0B5BA6;
+  text-decoration: none;
+}
+
+.btn.active, .btn:active {
+  background: #0B5BA6;
+  border-color: #052746;
+}
+
+/*------------------------*/
+/*-------Pagination------*/
+.pagination .page-item a:focus,
+.pagination .page-item a:hover {
+  color: #0B5BA6;
+}
+
+a {
+  color: #0B5BA6;
+}
+
+a:visited {
+  color: #0e75d6 !important;
+}
+
+.step .step-item a {
+  color: #0B5BA6;
+}
+
+.step .step-item.active a::before {
+  background: #0B5BA6;
+  border-color: #0B5BA6;
+}
+
+.step .step-item a::before {
+  background: #0B5BA6;
+}
+
+.step .step-item:not(:first-child)::before {
+  background: #0B5BA6;
+}
+
+/*-----------------------*/
+/*---------Menu---------*/
+.menu .menu-item > a:focus, .menu .menu-item > a:hover {
+  color: #0B5BA6;
+}
+
+/*--------------------*/
+.icon {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+i {
+  font-size: 13px;
+}
+
+.show {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
+.divider {
+  border-top: 0.05rem solid #bcc3ce;
+}
+
+.modal-create-page-1 {
+  max-width: 700px !important;
+}
+
+.modal-create-page-2 {
+  max-width: 1000px !important;
+}
+
+#main-select {
+  width: 25%;
+  right: 0;
+}
+
+.table {
+  height: 80px;
+}
+.table .tab-title {
+  font-size: 13px;
+}
+
+/* Modals */
+.page-item {
+  flex: none !important;
+  width: 100px;
+}
+
+.form-fieldset-equipmentList {
+  padding: 1rem .1rem;
+}
+
+.tab .tab-item.active a {
+  border-bottom-color: #0B5BA6;
+  color: #0B5BA6;
+}
+
+.tab .tab-item a:focus, .tab .tab-item a:hover {
+  color: #0B5BA6;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -6,15 +6,9 @@ const ClientSchema = new Schema({
         type: String,
         required: true
     },
-    legalAdress: {
-        type: String
-    },
-    actualAdress: {
-        type: String
-    },
-    contractStatus: {
-        type: String
-    },
+    legalAdress: String,
+    actualAdress: String,
+    contractStatus: String,
     contact: {
         type: [[String]]
     },

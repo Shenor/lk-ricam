@@ -1,0 +1,38 @@
+
+/*---Form-Fieldset--*/
+.content{
+  .form-fieldset{
+    margin-top: .2rem;
+  }
+}
+
+.form-fieldset {
+    margin-top: 10px;
+    border: 1px solid $border-color;
+    padding: 2px;
+
+        .form-legend {
+            background:$general-color;
+            padding:  5px 10px;
+            box-shadow: 0 0.05rem 0.2rem rgba(48,55,66,.3) ;
+            border-radius: 10px;
+            margin-left: 20px;
+            margin-bottom: 0;
+            color: white;
+        }
+
+        .icon-edit-span-modal{
+            display: inline-block;
+            margin-left: 5px;
+            border-left: white solid 2px;
+            padding-left: 8px;
+          }  
+
+          .form-input-contact-dynamics,
+          .form-input-connect-dynamics,
+          .third-select {
+            border: none;
+          }
+          
+}
+/*------------------*/

@@ -1,0 +1,32 @@
+/*-------Pagination------*/
+
+.pagination .page-item a:focus, 
+.pagination .page-item a:hover {
+  color: $general-color;
+}
+
+a{
+  color: $general-color;
+}
+
+a:visited {
+  color:lighten($general-color, 10%) !important;
+}
+
+.step .step-item a {
+  color: $general-color;
+}
+
+.step .step-item.active a::before {
+  background: $general-color;
+  border-color: $general-color;
+}
+
+.step .step-item a::before{
+  background: $general-color;
+}
+
+.step .step-item:not(:first-child)::before {
+  background: $general-color;
+}
+/*-----------------------*/

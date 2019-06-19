@@ -1,7 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 
-const Client = require('./database');
+const {Client} = require('./database');
 const action = require('./routes/action');
 
 const app  = express();
