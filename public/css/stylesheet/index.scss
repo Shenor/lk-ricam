@@ -17,6 +17,12 @@ $border-color: #bcc3ce;
 
 i {
   font-size: 13px;
+  width: 50px;
+  height: 40px;
+}
+
+.icon-arrow-right{
+  margin-left: .2rem;
 }
 
 .show {
@@ -40,7 +46,7 @@ i {
 }
 
 #main-select{
-    width: 25%;
+    width: 20%;
     right: 0;
 }
 
@@ -60,10 +66,6 @@ i {
   width: 100px;
 }
 
-.form-fieldset-equipmentList{
-  padding: 1rem .1rem;
-}
-
 .tab .tab-item.active a{
   border-bottom-color: $general-color;
   color: $general-color;
@@ -71,4 +73,45 @@ i {
 
 .tab .tab-item a:focus, .tab .tab-item a:hover {
   color: $general-color;
+}
+
+.content-equipment{
+  display: none;
+}
+
+.table td, 
+.table th {
+padding: .4rem .2rem;
+}
+
+.table-equipment{
+  tr:not(.thead-2){
+    td:nth-child(2),
+    th:nth-child(2){
+    border-right: .05rem solid #bcc3ce;
+    }
+  }
+}
+
+.div-equipment-head{
+  justify-content: center;
+}
+
+.notes{
+  width: 25rem;
+  word-break: break-all;
+}
+
+#notification {
+  position:fixed;
+  bottom: 2rem;
+  right: 3rem;
+  width:30%;
+  z-index:105;
+  text-align:center;
+  font-weight:normal;
+  font-size:14px;
+  font-weight:bold;
+  color:white;
+  padding:5px;
 }

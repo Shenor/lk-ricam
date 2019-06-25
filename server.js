@@ -1,42 +1,28 @@
 const express = require('express');
 const morgan = require('morgan');
 
-const {Client} = require('./database');
-const action = require('./routes/action');
+const indexRouter = require('./routes/indexRouter');
+const getDatabase = require('./routes/getDatabase');
+const createClient = require('./routes/createClient');
+const deleteClient = require('./routes/deleteClient');
+const getDataHeader = require('./routes/getDataHeader');
+const headers = require('./routes/headers');
 
 const app  = express();
 
+app.set('views', (__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 app.use(morgan('dev'));
 app.use((express.static(__dirname + '/public')));
 
-app.get('/', (req, res) => {
-    Client.find({}, (err, docs) => {
-        res.render('index', docs[0]);
-    });
-});
+app.use(headers);
+app.use('/', indexRouter);
 
-app.post('/database', (req, res) => {
-    Client.find({}, (err, docs) => {   
-        res.send(docs);
-    });
-});
+app.all('/database', getDatabase);
+app.all('/dataHeader', getDataHeader);
+app.post('/createClient', createClient);
+app.post('/deleteClient', deleteClient);
 
-app.get('/database', (req, res) => {
-    Client.find({}, (err, docs) => {   
-        res.send(docs);
-    });
-});
 
-app.post('/createClient', (req, res) => {
-    action.createClient(req, res);
-    res.send("Данные успешно добавлены");
-});
-
-app.post('/deleteClient', (req, res) => {
-   action.deleteClient(req, res);
-   res.send("Данные успешно удалены");
-});
-
-app.listen(3000, () => console.log('Server running at http://127.0.0.1:3000/'));
+app.listen(3000, () => console.log('Server running at http://192.168.1.25:3000/'));

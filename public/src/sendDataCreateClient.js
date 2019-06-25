@@ -86,10 +86,9 @@ export default function sendDataCreateClient() {
           body.monoBlock[idx] = {};
           body.monoBlock[idx].model = $(element).children(".column")[0].children[1].children[1].value;
           body.monoBlock[idx].monoBlockSN = $(element).children(".column")[0].children[2].children[1].value;
-          body.monoBlock[idx].hardDrive = $(element).children(".column")[1].children[1].value;
+          body.monoBlock[idx].hardDrive = $(element).children(".column")[0].children[3].children[0].value;
           body.monoBlock[idx].state = $(element).children(".column")[1].children[1].children[1].value;
           body.monoBlock[idx].notes = $(element).children(".column")[1].children[2].value;  
-
         });
 
         //Printer
@@ -108,17 +107,20 @@ export default function sendDataCreateClient() {
         });
 
         body.connect = bufferConnect;
-        
         console.log(body);
+        
          $.ajax({
            type: "POST",
-           url: "http://localhost:3000/createClient",
+           url: "http://192.168.1.25:3000/createClient", //192.168.1.25
            crossDomian: true,
            dataType: "json",
            data: JSON.stringify(body)
-         }).done(function (res) {
-           console.log(res);
-         });
-        console.log(body);
-});
+         }).done((data) => {
+          console.log(data);
+          $(".modal").removeClass("active");
+          $("#notification").fadeIn("slow");
+          setTimeout(function(){
+            $("#notification").fadeOut("slow")}, 3000);
+    });
+  });
 }

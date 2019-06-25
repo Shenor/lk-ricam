@@ -42,5 +42,7 @@ export default function modals() {
         $(".modal").removeClass("active");
         modalId = 0;
       });
+
+      //
 }
 

@@ -5,11 +5,15 @@ require('./src/models/euipment_model');
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://localhost/clients', {useNewUrlParser: true})
+const options = {
+    useNewUrlParser: true,
+    family: 4
+};
+
+mongoose.connect('mongodb://127.0.0.1:27017/clients', options)
     .then(console.log('MongoDB has started ...'))
     .catch((e) => console.log(e));
 
 const Client = mongoose.model('clients');
-const Equipment = mongoose.model('equipment');
 
-module.exports = {Client, Equipment};
+module.exports = {Client};
