@@ -1,0 +1,19 @@
+<table class="table table-hover text-center">
+    <thead>
+        <tr class="tab-title table-striped">
+            <th>Программа</th>
+            <th>id</th>
+            <th>Место</th>
+        </tr>
+    </thead>
+    <tbody id="table-body-connect">
+        <!--  -->
+        {{#each connect}}
+        <tr>
+            <td>{{this.[0]}}</td>
+            <td>{{this.[1]}}</td>
+            <td>{{this.[2]}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const hbs = require('hbs');
 
 const indexRouter = require('./routes/indexRouter');
 const getDatabase = require('./routes/getDatabase');
@@ -12,6 +13,7 @@ const app  = express();
 
 app.set('views', (__dirname, 'views'));
 app.set('view engine', 'hbs');
+hbs.registerPartials(__dirname + '/views/partials');
 
 app.use(morgan('dev'));
 app.use((express.static(__dirname + '/public')));

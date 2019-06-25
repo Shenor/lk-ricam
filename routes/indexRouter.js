@@ -8,7 +8,6 @@ const {Client} = require('./../database');
         Client.find({}, function (err, docs){
             res.render('index.hbs', docs[0])
         });
-
     });
 
 module.exports = router;

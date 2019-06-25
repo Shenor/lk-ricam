@@ -1,0 +1,376 @@
+<div class="modal modal-create" id="modal-create-page2">
+    <a href="#close" class="modal-overlay" aria-label="Close"></a>
+    <div class="modal-container modal-create-page-2">
+        <div class="modal-header">
+            <a href="#close" class="btn btn-clear float-right" aria-label="Close"></a>
+            <div class="modal-title h5">Список оборудования</div>
+        </div>
+        <div class="modal-body">
+            <div class="content">
+                <!-- content here -->
+                <div class="columns">
+                    <div class="column col-4 text-left text-dark">
+
+                        <ul class="menu">
+                            <!-- menu header text -->
+                            <li class="divider text-center" data-content="Список оборудования">
+                            </li>
+                            <!-- menu item standard -->
+                            <li class="menu-item tab-item-createModal-equiequpmentList">
+                                <a href="#">
+                                    Фискальный регистратор
+                                </a>
+                            </li>
+                            <li class="menu-item tab-item-createModal-equiequpmentList">
+                                <a href="#">
+                                    Сканер штрих-кода
+                                </a>
+                            </li>
+                            <li class="menu-item tab-item-createModal-equiequpmentList">
+                                <a href="#">
+                                    Денежный ящик
+                                </a>
+                            </li>
+                            <li class="menu-item tab-item-createModal-equiequpmentList">
+                                <a href="#">
+                                    Коммутатор
+                                </a>
+                            </li>
+                            <li class="menu-item tab-item-createModal-equiequpmentList">
+                                <a href="#">
+                                    Моноблок
+                                </a>
+                            </li>
+                            <li class="menu-item tab-item-createModal-equiequpmentList">
+                                <a href="#">
+                                    Принтер
+                                </a>
+                            </li>
+                            <li class="menu-item tab-item-createModal-equiequpmentList">
+                                <a href="#">
+                                    Весы
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="column col-8 text-center text-dark" id="wrapper-createModal-equiequpmentList">
+                        <div class="panel-info-createModal-equiequpmentList"></div>
+                        <!-- Фискальный регистратор -->
+                        <div class="panel-info-createModal-equiequpmentList">
+                            <fieldset class="form-fieldset form-fieldset-createModal-equipmentList text-left"
+                                id="fieldset-createModal-equipmentList-fn">
+                                <legend class="form-legend form-legend-connect">Фискальный регистратор<span
+                                        class="icon-edit-span-fn icon-edit-span-modal"><i
+                                            class="icon icon-plus icon-plus-modal-contact"></i></span></legend>
+
+                                <div class="columns p-relative column-fn">
+                                    <i class="icon icon-cross icon-createModal-equipmentList p-absolute"></i>
+                                    <div class="column col-6">
+                                        <div class="divider divider-createModal-equipmentList text-center"
+                                            data-content="Фискальный регистратор"></div>
+
+                                        <select class="form-select four-select fiscalModel">
+                                            <option disabled selected>-Выберите модель-</option>
+                                            <option>Model-1</option>
+                                            <option>Model-2</option>
+                                            <option>Model-3</option>
+                                        </select>
+
+                                        <div class="form-group mt-2">
+                                            <input class="form-input cool-input__input" type="text"
+                                                placeholder="Серийный номер" id="fiscalRegistrSN">
+                                        </div>
+                                    </div>
+                                    <div class="column col-6">
+                                        <div class="divider divider-createModal-equipmentList text-center"
+                                            data-content="Фискальный накопитель"></div>
+                                        <div class="columns">
+                                            <div class="column col-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Срок</span>
+                                                    <select class="form-select four-select" id="fiscalTime">
+                                                        <option disabled selected>...</option>
+                                                        <option>15 мес.</option>
+                                                        <option>36 мес.</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="column col-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">S/N</span>
+                                                    <input type="text" class="form-input" placeholder="..."
+                                                        id="fiscalDriveSN">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group mt-2">
+                                            <input class="form-input cool-input__input" type="text"
+                                                placeholder="Дата установки" id="fiscalDate">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="divider text-center col-12" data-content=""></div>
+                            </fieldset>
+                        </div>
+                        <!-- Сканер штрих-кода -->
+                        <div class="panel-info-createModal-equiequpmentList">
+                            <fieldset class="form-fieldset form-fieldset-createModal-equipmentList text-left"
+                                id="fieldset-createModal-equipmentList-sh">
+                                <legend class="form-legend form-legend-connect">Сканер штрих-кода<span
+                                        class="icon-edit-span-modal"><i
+                                            class="icon icon-plus icon-edit-span-sh"></i></span></legend>
+
+                                <div class="columns  p-relative column-barcodeScanner">
+                                    <i class="icon icon-cross icon-createModal-equipmentList p-absolute"></i>
+                                    <div class="column col-6">
+                                        <div class="divider divider-createModal-equipmentList text-center"
+                                            data-content=""></div>
+                                        <select class="form-select four-select">
+                                            <option disabled selected>-Выберите модель-</option>
+                                            <option>Model-1</option>
+                                            <option>Model-2</option>
+                                            <option>Model-3</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="column col-6">
+                                        <div class="divider divider-createModal-equipmentList text-center"
+                                            data-content=""></div>
+                                        <input class="form-input cool-input__input" type="text" placeholder="Кол-во">
+                                    </div>
+                                </div>
+                                <div class="divider text-center col-12" data-content=""></div>
+                            </fieldset>
+                        </div>
+                        <!-- Денежный ящик -->
+                        <div class="panel-info-createModal-equiequpmentList">
+                            <fieldset class="form-fieldset form-fieldset-createModal-equipmentList text-left"
+                                id="fieldset-createModal-equipmentList-moneyBox">
+                                <legend class="form-legend form-legend-connect">Денежный ящик<span
+                                        class="icon-edit-span-modal"><i
+                                            class="icon icon-plus icon-edit-span-moneyBox"></i></span></legend>
+                                <div class="columns  p-relative column-moneyBox">
+                                    <i class="icon icon-cross icon-createModal-equipmentList p-absolute"></i>
+                                    <div class="column col-6">
+                                        <div class="divider divider-createModal-equipmentList text-center"
+                                            data-content=""></div>
+                                        <select class="form-select four-select" name="fout-select">
+                                            <option disabled selected>-Выберите модель-</option>
+                                            <option>Model-1</option>
+                                            <option>Model-2</option>
+                                            <option>Model-3</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="column col-6">
+                                        <div class="divider divider-createModal-equipmentList text-center"
+                                            data-content=""></div>
+                                        <input class="form-input cool-input__input" type="text" placeholder="Кол-во">
+                                    </div>
+                                </div>
+                                <div class="divider text-center col-12" data-content=""></div>
+                            </fieldset>
+                        </div>
+                        <!-- Коммутатор -->
+                        <div class="panel-info-createModal-equiequpmentList">
+                            <fieldset class="form-fieldset form-fieldset-createModal-equipmentList text-left"
+                                id="fieldset-createModal-equipmentList-com">
+                                <legend class="form-legend form-legend-connect">Коммутатор<span
+                                        class="icon-edit-span-modal icon-edit-span-com"><i
+                                            class="icon icon-plus icon-plus-modal-com"></i></span></legend>
+                                <div class="columns  p-relative column-switchboard">
+                                    <i class="icon icon-cross icon-createModal-equipmentList p-absolute"></i>
+                                    <div class="column col-6">
+                                        <div class="divider divider-createModal-equipmentList text-center"
+                                            data-content="Доступ к управлению"></div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">Логин</span>
+                                            <input type="text" class="form-input" placeholder="...">
+                                        </div>
+                                        <div class="input-group mt-2">
+                                            <span class="input-group-addon">Пароль</span>
+                                            <input type="text" class="form-input" placeholder="...">
+                                        </div>
+                                    </div>
+                                    <div class="column col-6">
+                                        <div class="divider divider-createModal-equipmentList text-center"
+                                            data-content="Модель и локация"></div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">Модель</span>
+                                            <input type="text" class="form-input" placeholder="...">
+                                        </div>
+                                        <div class="input-group mt-2">
+                                            <span class="input-group-addon">Располож.</span>
+                                            <input type="text" class="form-input" placeholder="...">
+                                        </div>
+                                    </div>
+                                    <div class="column col-12">
+                                        <textarea class="form-input mt-2" placeholder="Заметки" rows="2"></textarea>
+                                    </div>
+                                </div>
+                                <div class="divider text-center col-12" data-content=""></div>
+                            </fieldset>
+                        </div>
+                        <!-- Моноблок -->
+                        <div class="panel-info-createModal-equiequpmentList">
+                            <fieldset class="form-fieldset form-fieldset-createModal-equipmentList text-left"
+                                id="fieldset-createModal-equipmentList-mnbk">
+                                <legend class="form-legend form-legend-connect">Моноблок<span
+                                        class="icon-edit-span-modal icon-edit-span-mnbk"><i
+                                            class="icon icon-plus icon-plus-modal-mnbk"></i></span></legend>
+                                <div class="columns  p-relative column-mnbk">
+                                    <i class="icon icon-cross icon-createModal-equipmentList p-absolute"></i>
+                                    <div class="column col-6">
+                                        <div class="divider divider-createModal-equipmentList text-center"
+                                            data-content="Данные по моноблоку"></div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">Модель</span>
+                                            <input type="text" class="form-input" placeholder="...">
+                                        </div>
+                                        <div class="input-group mt-2">
+                                            <span class="input-group-addon">S/N</span>
+                                            <input type="text" class="form-input" placeholder="...">
+                                        </div>
+                                        <div class="input-group mt-2">
+                                            <select class="form-select four-select">
+                                                <option disabled selected>-- Жесткий диск--</option>
+                                                <option>HDD</option>
+                                                <option>SSD</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="column col-6">
+                                        <div class="divider divider-createModal-equipmentList text-center"
+                                            data-content="Состояние и заметки"></div>
+                                        <select class="form-select four-select">
+                                            <option disabled selected>-- Состояние --</option>
+                                            <option>Плохое</option>
+                                            <option>Стабильное</option>
+                                            <option>Хоршее</option>
+                                        </select>
+                                        <textarea class="form-input mt-2" placeholder="Заметки" rows="3"></textarea>
+                                    </div>
+                                </div>
+                                <div class="divider text-center col-12" data-content=""></div>
+                            </fieldset>
+                        </div>
+                        <!-- Принтер -->
+                        <div class="panel-info-createModal-equiequpmentList">
+                            <fieldset class="form-fieldset form-fieldset-createModal-equipmentList text-left"
+                                id="fieldset-createModal-equipmentList-prnt">
+                                <legend class="form-legend form-legend-connect">Принтер<span
+                                        class="icon-edit-span-modal icon-edit-span-prnt"><i
+                                            class="icon icon-plus icon-modal-span-prt"></i></span></legend>
+                                <div class="columns  p-relative column-prnt">
+                                    <i class="icon icon-cross icon-createModal-equipmentList p-absolute"></i>
+                                    <div class="column col-6">
+                                        <div class="divider divider-createModal-equipmentList text-center"
+                                            data-content=""></div>
+                                        <select class="form-select four-select" name="fout-select">
+                                            <option disabled selected>-Выберите модель-</option>
+                                            <option>Model-1</option>
+                                            <option>Model-2</option>
+                                            <option>Model-3</option>
+                                        </select>
+                                    </div>
+                                    <div class="column col-6">
+                                        <div class="divider divider-createModal-equipmentList text-center"
+                                            data-content=""></div>
+                                        <div class="columns">
+                                            <div class="column col-6">
+                                                <input class="form-input cool-input__input" type="text"
+                                                    placeholder="Кол-во">
+                                            </div>
+                                            <div class="column col-6">
+                                                <select class="form-select four-select" name="fout-select">
+                                                    <option disabled selected>-Тип подкл.-</div>
+                                            </option>
+                                            <option>USB</option>
+                                            <option>COM</option>
+                                            <option>Провод</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="divider text-center col-12" data-content=""></div>
+                        </fieldset>
+                    </div>
+                    <!-- Весы -->
+                    <div class="panel-info-createModal-equiequpmentList">
+                        <fieldset class="form-fieldset form-fieldset-createModal-equipmentList text-left"
+                            id="fieldset-createModal-equipmentList-vs">
+                            <legend class="form-legend form-legend-connect">Весы<span
+                                    class="icon-edit-span-modal icon-edit-span-vs"><i
+                                        class="icon icon-plus icon-modal-span-vs"></i></span></legend>
+                            <div class="columns  p-relative column-libra">
+                                <i class="icon icon-cross icon-createModal-equipmentList p-absolute"></i>
+                                <div class="column col-6">
+                                    <div class="divider divider-createModal-equipmentList text-center" data-content="">
+                                    </div>
+                                    <select class="form-select four-select" name="fout-select">
+                                        <option disabled selected>-Выберите модель-</option>
+                                        <option>Model-1</option>
+                                        <option>Model-2</option>
+                                        <option>Model-3</option>
+                                    </select>
+                                </div>
+                                <div class="column col-6">
+                                    <div class="divider divider-createModal-equipmentList text-center" data-content="">
+                                    </div>
+                                    <div class="columns">
+                                        <div class="column col-6">
+                                            <input class="form-input cool-input__input" type="text"
+                                                placeholder="Кол-во">
+                                        </div>
+                                        <div class="column col-6">
+                                            <select class="form-select four-select" name="fout-select">
+                                                <option disabled selected>-Тип подкл.-</option>
+                                                <option>USB</option>
+                                                <option>COM</option>
+                                                <option>Провод</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="divider text-center col-12" data-content=""></div>
+                        </fieldset>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <ul class="pagination">
+            <li class="page-item page-prev text-left">
+                <a href="#">
+                    <div class="page-item-title h5 btn-back">Назад</div>
+                </a>
+            </li>
+            <ul class="step">
+                <li class="step-item">
+                    <a href="#" class="tooltip" data-tooltip="Step 1">Step 1</a>
+                </li>
+                <li class="step-item active">
+                    <a href="#" class="tooltip" data-tooltip="Step 2">Step 2</a>
+                </li>
+                <li class="step-item">
+                    <a href="#" class="tooltip" data-tooltip="Step 3">Step 3</a>
+                </li>
+                <li class="step-item">
+                    <a href="#" class="tooltip" data-tooltip="Step 4">Step 4</a>
+                </li>
+            </ul>
+            <li class="page-item page-next text-right">
+                <a href="#">
+                    <div class="page-item-title h5 btn-next">Далее</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>

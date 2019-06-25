@@ -6,7 +6,7 @@ export default function sendDataDeleteClient() {
 
       $.ajax({
         type: "POST",
-        url: "http://localhost:3000/deleteClient", //192.168.1.25
+        url: "http://192.168.1.25:3000/deleteClient", //192.168.1.25
         crossDomian: true,
         dataType: "json",
         data: JSON.stringify(delBody)

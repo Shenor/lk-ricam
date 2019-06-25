@@ -120,7 +120,7 @@ export default function sendDataCreateClient() {
           $(".modal").removeClass("active");
           $("#notification").fadeIn("slow");
           setTimeout(function(){
-            $("#notification").fadeOut("slow")}, 3000);
+            $("#notificationCreate").fadeOut("slow")}, 3000);
     });
   });
 }

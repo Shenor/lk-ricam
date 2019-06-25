@@ -1,0 +1,191 @@
+<div class="columns d-flex div-equipment-head">
+            <div class="column col-12">
+              <fieldset class="form-fieldset form-fieldset-equipmentList text-left">
+                <legend class="form-legend form-legend-equipment form-legend-fiscal">Фискальный регистратор<i class="icon icon-arrow-right"></i></legend>
+                 <div class = "content-equipment content-fiscal">
+                 <table class="table table-striped table-hover text-center table-equipment">
+                    <thead>
+                      <tr>
+                        <th colspan="2">Фискальный <br> регистратор</th>
+                        <th colspan="3">Фискальный <br> накопитель</th>
+                      </tr>
+                      <tr>
+                        <th>Модель</th>
+                        <th>Серийный <br> номер</th>
+                        <th>Срок</th>
+                        <th>S/N</th>
+                        <th>Дата <br> установки</th>
+                      </tr>
+                    </thead>
+                    <tbody id="table-fiscal">
+                         {{#each fiscal}}
+                            <tr>
+                              <td>{{fiscalRegistr.fiscalModel}}</td>
+                              <td>{{fiscalRegistr.fiscalSN}}</td>
+                              <td>{{fiscalDrive.fiscalTime}}</td>
+                              <td>{{fiscalDrive.fiscalSN}}</td>
+                              <td>{{fiscalDrive.fiscalDate}}</td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                  </table>
+                </div>
+              </fieldset>
+              <fieldset class="form-fieldset form-fieldset-equipmentList text-left">
+                <legend class="form-legend form-legend-equipment form-legend-com">Коммутатор<i class="icon icon-arrow-right"></i></legend>
+                 <div class = "content-equipment content-com">
+                  <table class="table table-striped table-hover text-center table-equipment">
+                    <thead>
+                      <tr>
+                        <th colspan="2">Доступ к упрвлению</th>
+                        <th colspan="3">Модель и локация</th>
+                      </tr>
+                      <tr>
+                        <th>Логин</th>
+                        <th>Пароль</th>
+                        <th>Модель</th>
+                        <th>Располож.</th>
+                        <th>Примечание</th>
+                      </tr>
+                    </thead>
+                    <tbody id="table-switchboard">
+                     {{#each switchboard}}
+                            <tr>
+                              <td>{{login}}</td>
+                              <td>{{password}}</td>
+                              <td>{{model}}</td>
+                              <td>{{location}}</td>
+                              <td class="notes">{{notes}}</td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                  </table>
+                </div>
+              </fieldset>       
+              <fieldset class="form-fieldset form-fieldset-equipmentList text-left">
+                <legend class="form-legend form-legend-equipment form-legend-monoblock">Моноблок<i class="icon icon-arrow-right"></i></legend>
+                 <div class = "content-equipment content-monoblock">
+                  <table class="table table-striped table-hover text-center table-equipment">
+                    <thead>
+                      <tr>
+                        <th colspan="3">Данные по моноблоку</th>
+                        <th colspan="2">Состояние и Примечание</th>
+                      </tr>
+                      <tr>
+                        <th>Модель</th>
+                        <th>S/N</th>
+                        <th>Диск</th>
+                        <th>Состояние</th>
+                        <th class="notes">Примечание</th>
+                      </tr>
+                    </thead>
+                    <tbody id="table-monoBlock">
+                     {{#each monoBlock}}
+                            <tr>
+                              <td>{{this.model}}</td>
+                              <td>{{this.monoBlockSN}}</td>
+                              <td>{{this.hardDrive}}</td>
+                              <td>{{this.state}}</td>
+                              <td class="notes">{{this.notes}}</td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                  </table>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+          <div class="columns">
+            <div class="column col-6 text-center accordion">         
+              <fieldset class="form-fieldset form-fieldset-equipmentList text-left">
+                <legend class="form-legend form-legend-equipment form-legend-moneybox">Денежный ящик<i class="icon icon-arrow-right"></i></legend>
+                 <div class = "content-equipment content-moneybox">
+                  <table class="table table-striped table-hover text-center">
+                    <thead>
+                      <tr>
+                        <th>Модель</th>
+                        <th>Количество</th>
+                      </tr>
+                    </thead>
+                    <tbody id="table-moneyBox">
+                        {{#each moneyBox}}
+                            <tr>
+                              <td>{{this.moneyBoxModel}}</td>
+                              <td>{{this.moneyBoxNumber}}</td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                  </table>
+                </div>
+              </fieldset>
+              <fieldset class="form-fieldset form-fieldset-equipmentList text-left">
+                <legend class="form-legend form-legend-equipment form-legend-print">Принтер<i class="icon icon-arrow-right"></i></legend>
+                <div class = "content-equipment content-print">
+                  <table class="table table-striped table-hover text-center">
+                    <thead>
+                      <tr>
+                        <th>Модель</th>
+                        <th>Количество</th>
+                        <th>Тип подключения</th>
+                      </tr>
+                    </thead>
+                    <tbody id="table-printer">
+                     {{#each printer}}
+                            <tr>
+                              <td>{{this.printerModel}}</td>
+                              <td>{{this.printerNumber}}</td>
+                              <td>{{this.printerConnectionType}}</td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                  </table>
+                </div>
+              </fieldset>
+            </div>
+            <div class="column col-6 text-center accordion">
+              <fieldset class="form-fieldset form-fieldset-equipmentList text-left">
+                <legend class="form-legend form-legend-equipment form-legend-barcodeScanner">Сканер штрих-кода<i class="icon icon-arrow-right"></i></legend>
+                 <div class = "content-equipment content-barcodeScanner">
+                  <table class="table table-striped table-hover text-center">
+                    <thead>
+                      <tr>
+                        <th>Модель</th>
+                        <th>Количество</th>
+                      </tr>
+                    </thead>
+                    <tbody id="table-barcodeScanner">
+                     {{#each barcodeScanner}}
+                            <tr>
+                              <td>{{this.scannerModel}}</td>
+                              <td>{{this.scannerNumber}}</td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                  </table>
+                </div>
+              </fieldset>
+              <fieldset class="form-fieldset form-fieldset-equipmentList text-left">
+                <legend class="form-legend form-legend-equipment form-legend-libra">Весы<i class="icon icon-arrow-right icon-vs"></i></legend>
+                <div class = "content-equipment content-libra">
+                  <table class="table table-striped table-hover text-center">
+                    <thead>
+                      <tr>
+                        <th>Модель</th>
+                        <th>Количество</th>
+                        <th>Тип подключения</th>
+                      </tr>
+                    </thead>
+                    <tbody id="table-libra">
+                     {{#each libra}}
+                            <tr>
+                              <td>{{this.libraModel}}</td>
+                              <td>{{this.libraNumber}}</td>
+                              <td>{{this.libraConnectionType}}</td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                  </table>
+                </div>
+              </fieldset>
+            </div>
+          </div>
