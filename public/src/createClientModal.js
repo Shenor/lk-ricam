@@ -57,9 +57,25 @@ $('.cool-input__input').on("input", function(){
 //End Placeholder
 
 //Input Mask
-$(document).on('click', '.phone', function(){
+$(document).on('click', '.phone', () => {
     jQuery(function($){    
         $(".phone").mask("+7 (999) 999-9999");
      });
-
 });
+
+$(document).on('click', '.fn-date', () => {
+    jQuery(function($){    
+        $(".fn-date").mask("99.99.9999");
+     });
+});
+
+$(".fn-date").blur(() => {
+    const dateEntered = $('.fn-date').val();
+    if (!moment(dateEntered,'DD-MM-YYYY').isValid()) {
+        $(".fn-date").addClass("error");
+    } else {
+        $(".fn-date").removeClass("error");
+    }
+});
+
+

@@ -17,7 +17,7 @@ window.addEventListener("DOMContentLoaded", function() {
       crossDomian: true,
       data: "LOLOLOLO"
     }).done((data) => {
-      console.log(data);
+      // console.log(data);
 
     let id = 0, myData, fullData,
         strData = JSON.stringify(data);

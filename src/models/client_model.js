@@ -9,6 +9,7 @@ const ClientSchema = new Schema({
     legalAdress: String,
     actualAdress: String,
     contractStatus: String,
+    dateEndFn: Date,
     contact: {
         type: [[String]]
     },

@@ -1,3 +1,5 @@
+import { RSA_SSLV23_PADDING } from "constants";
+
 export default function selected(data, myData, fullData, id) {
         
   let select = document.querySelector(".main-select"),
@@ -30,31 +32,54 @@ export default function selected(data, myData, fullData, id) {
 
 
 //Супер кастыльный код
-    function tableContentEquip(tab, table) {
-      let obj = myData[tab];
 
-      obj.forEach(element => {
-        // Перебираем объекты во вкладках для количесва ячеек
-        let row = document.createElement("tr");
-        interage(element); //реккурсивынй обход объекта
-        table.append(row);
+function tableContentEquip(tab, table) {
+    moment.locale('ru');
 
-        function interage(obj) {
-          for (let key in obj) {
-            //получаем объект перебирем сво-ва
-            let elem = obj[key]; //переприваеваем искомый объект да дочерний
-            if (typeof elem === "object") {
-              //если свойства тоже, объект, то запускаем заново функцию
-              interage(elem);
-            } else {
-              let td = document.createElement("td");
-              td.innerText = elem;
-              row.append(td);
-            }
-          }
+  let fT,
+      obj = myData[tab];
+
+  obj.forEach(element => {
+    let row = document.createElement("tr"); // Перебираем объекты во вкладках для количесва строк
+
+      interage(element); //реккурсивынй обход объекта
+      table.append(row);
+
+    function interage(obj) {
+      for (let key in obj) {
+        //получаем объект перебирем сво-ва
+        let elem = obj[key]; //переприваеваем искомый объект да дочерний
+
+        if (typeof elem === "object") {
+          //если свойства тоже, объект, то запускаем заново функцию
+          interage(elem);
+        } else if (key == "fiscalTime") {
+          fT = parseInt(elem);
+          let td = document.createElement("td");
+          td.innerText = elem;
+          row.append(td);
+        } else if (key == "fiscalDate") {
+          let fD = elem,
+            fEndDate = moment(fD, "DD.MM.YYYY").add(fT, 'week').format("DD-MM-YYYY"),
+            fleftDate = moment(fEndDate, "DD-MM-YYYY"),
+            td = document.createElement("td"),
+            td1 = document.createElement("td"),
+            td2 = document.createElement("td");
+
+          td.innerText = elem;
+          td1.innerText = fEndDate;
+          td2.innerText = fleftDate.fromNow();
+
+          row.append(td, td1, td2);
+        } else {
+          let td = document.createElement("td");
+          td.innerText = elem;
+          row.append(td);
         }
-      });
+      }
     }
+  });
+}
 
     fullData.forEach((elem, idx) => {
       $(".main-select").append(
@@ -62,16 +87,15 @@ export default function selected(data, myData, fullData, id) {
       );
     });
 
-
-    $(".main-select").change(() => {
+      $(".main-select").on('change', function() {
         id = select.value;
         myData = fullData[id];
-
+  
         title.textContent = fullData[id].name;
         legalAdress.textContent = fullData[id].legalAdress;
         actualAdress.textContent = fullData[id].actualAdress;
         contractStatus.textContent = fullData[id].contractStatus;
- 
+  
       $('#table-body-contacts tr').remove();
       $('#table-body-connect tr').remove();
       $('#table-fiscal tr').remove();
@@ -81,20 +105,19 @@ export default function selected(data, myData, fullData, id) {
       $('#table-printer tr').remove();
       $('#table-barcodeScanner tr').remove();
       $('#table-libra tr').remove();
-
-
-        //Table Contact
-        tableContent("contact", tbodyContact);
-        //Table Connect
-        tableContent("connect", tbodyConnect);
-        tableContentEquip("fiscal", tbodyEquipFiscal);
-        tableContentEquip("switchboard", tbodyEquipSwitchboard);
-        tableContentEquip("monoBlock", tbodyEquipMnbk);
-        tableContentEquip("moneyBox", tbodyEquipMoneyBox);
-        tableContentEquip("printer", tbodyEquipPrinter);
-        tableContentEquip("barcodeScanner", tbodyEquipBarcodeScanner);
-        tableContentEquip("libra", tbodyEquiplibra);
-
-
-    });
+  
+  
+      //Table Contact
+      tableContent("contact", tbodyContact);
+      //Table Connect
+      tableContent("connect", tbodyConnect);
+      tableContentEquip("fiscal", tbodyEquipFiscal);
+      tableContentEquip("switchboard", tbodyEquipSwitchboard);
+      tableContentEquip("monoBlock", tbodyEquipMnbk);
+      tableContentEquip("moneyBox", tbodyEquipMoneyBox);
+      tableContentEquip("printer", tbodyEquipPrinter);
+      tableContentEquip("barcodeScanner", tbodyEquipBarcodeScanner);
+      tableContentEquip("libra", tbodyEquiplibra);
+      });
+    
   }

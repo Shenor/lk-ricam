@@ -19,5 +19,9 @@ export default function sendDataDeleteClient() {
           }
         });
       });
+      $(".modal").removeClass("active");
+      $("#notificationDelete").fadeIn("slow");
+      setTimeout(() => {
+        $("#notificationDelete").fadeOut("slow")}, 3000);
     });
 }

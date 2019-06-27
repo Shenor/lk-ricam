@@ -26,5 +26,4 @@ export default function toggleEquipmentList () {
     $(".form-legend-libra").click(() => {
         $(".content-libra").slideToggle();
       });
-
 }

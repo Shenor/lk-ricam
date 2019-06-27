@@ -46,6 +46,8 @@ export default function sendDataCreateClient() {
 
         //FiscalRegistr
         $(".column-fn").each((idx, element) => {
+          let fTm=$(element).children(".column")[1].children[1].children[0].children[0].children[1].value,
+              dDt=$(element).children(".column")[1].children[2].children[0].value;
           body.fiscal[idx] = {
             fiscalRegistr: {},
             fiscalDrive: {}
@@ -54,7 +56,8 @@ export default function sendDataCreateClient() {
           body.fiscal[idx].fiscalRegistr.fiscalSN = $(element).children(".column")[0].children[2].children[0].value;
           body.fiscal[idx].fiscalDrive.fiscalTime = $(element).children(".column")[1].children[1].children[0].children[0].children[1].value;
           body.fiscal[idx].fiscalDrive.fiscalSN = $(element).children(".column")[1].children[1].children[1].children[0].children[1].value;
-          body.fiscal[idx].fiscalDrive.fiscalDate = $(element).children(".column")[1].children[2].children[0].value;         
+          body.fiscal[idx].fiscalDrive.fiscalDate = $(element).children(".column")[1].children[2].children[0].value;     
+          // body.fiscal[idx].fiscalDrive.fiscalEndDate
         });
         
         //Barcode Scanner
@@ -107,7 +110,6 @@ export default function sendDataCreateClient() {
         });
 
         body.connect = bufferConnect;
-        console.log(body);
         
          $.ajax({
            type: "POST",
@@ -116,10 +118,9 @@ export default function sendDataCreateClient() {
            dataType: "json",
            data: JSON.stringify(body)
          }).done((data) => {
-          console.log(data);
           $(".modal").removeClass("active");
-          $("#notification").fadeIn("slow");
-          setTimeout(function(){
+          $("#notificationCreate").fadeIn("slow");
+          setTimeout(() => {
             $("#notificationCreate").fadeOut("slow")}, 3000);
     });
   });
