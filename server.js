@@ -3,11 +3,11 @@ const morgan = require('morgan');
 const hbs = require('hbs');
 
 const indexRouter = require('./routes/indexRouter');
-const getDatabase = require('./routes/getDatabase');
-const createClient = require('./routes/createClient');
-const deleteClient = require('./routes/deleteClient');
-const getDataHeader = require('./routes/getDataHeader');
-const headers = require('./routes/headers');
+const getDatabaseRouter = require('./routes/getDatabase');
+const createClientRouter = require('./routes/createClient');
+const deleteClientRouter = require('./routes/deleteClient');
+const getDataHeaderRouter = require('./routes/getDataHeader');
+const headersRouter = require('./routes/headers');
 
 const app  = express();
 
@@ -18,13 +18,13 @@ hbs.registerPartials(__dirname + '/views/partials');
 app.use(morgan('dev'));
 app.use((express.static(__dirname + '/public')));
 
-app.use(headers);
+app.use(headersRouter);
 app.use('/', indexRouter);
 
-app.all('/database', getDatabase);
-app.all('/dataHeader', getDataHeader);
-app.post('/createClient', createClient);
-app.post('/deleteClient', deleteClient);
+app.all('/database', getDatabaseRouter);
+app.all('/dataHeader', getDataHeaderRouter);
+app.post('/createClient', createClientRouter);
+app.post('/deleteClient', deleteClientRouter);
 
 
 app.listen(3000, () => console.log('Server running at http://192.168.1.25:3000/'));

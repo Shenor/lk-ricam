@@ -52,6 +52,7 @@ i {
 
 .table {
     height: 80px;
+    table-layout: fixed;
 
     .tab-title {
         font-size: 13px;
@@ -132,4 +133,19 @@ padding: .4rem .2rem;
   }
   box-shadow: 0 0 0 0.1rem rgba(232,86,0,.2);
   border-color: #e85600;
+}
+
+.edit-controls {
+  position: absolute;
+}
+
+.edit-td {
+  position: relative;
+  padding: 0;
+}
+
+.main-table *{
+  ::hover{
+    background: #eef0f3;
+  }
 }

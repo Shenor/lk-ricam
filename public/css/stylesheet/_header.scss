@@ -16,11 +16,17 @@
 
       .btn-plus {
         left: 0;
+        top: 0.5rem;
       }
       
       .btn-delete {
         @extend .btn-plus;
-        top: 55px;
+        top: 2.5rem;
+      }
+
+      .btn-edit{
+        @extend .btn-plus;
+        top: 4.5rem;
       }
 
       .panel-nav {

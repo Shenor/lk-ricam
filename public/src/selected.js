@@ -1,5 +1,3 @@
-import { RSA_SSLV23_PADDING } from "constants";
-
 export default function selected(data, myData, fullData, id) {
         
   let select = document.querySelector(".main-select"),

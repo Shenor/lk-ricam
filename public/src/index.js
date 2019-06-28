@@ -6,6 +6,7 @@ import modals from './modals';
     import createClientModal from './createClientModal';
     import CreateClientBlocksEquipmentList from './CreateClientBlocksEquipmentList'
     import toggleEquipmentList from './toggleEquipmentList';
+    import editorTD from './editorTD';
 
 window.addEventListener("DOMContentLoaded", function() {
 
@@ -19,9 +20,8 @@ window.addEventListener("DOMContentLoaded", function() {
     }).done((data) => {
       // console.log(data);
 
-    let id = 0, myData, fullData,
-        strData = JSON.stringify(data);
-        fullData = JSON.parse(strData);
+    let id = 0, myData, fullData;
+        fullData = JSON.parse(JSON.stringify(data));
   
     myData = fullData[id];  
 
@@ -29,7 +29,7 @@ window.addEventListener("DOMContentLoaded", function() {
     selected(data, myData, fullData, id);
 
     //Modal
-    modals();
+    modals(id, fullData);
 
     //Create new Client
     sendDataCreateClient();
@@ -48,5 +48,8 @@ window.addEventListener("DOMContentLoaded", function() {
 
     //
     toggleEquipmentList();
+
+    //
+    editorTD();
     });
   });

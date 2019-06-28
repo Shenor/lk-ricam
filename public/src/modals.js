@@ -1,7 +1,12 @@
 
-export default function modals() {
+export default function modals(id, fullData) {
 
     $(".btn-plus").click(() => {
+        $('#name').val('');
+        $('#legalAdress').val('');
+        $('#actualAdress').val('');
+        $('#contract-modal').val('');
+
         $("#modal-create").addClass("active");
       });
     
@@ -9,6 +14,8 @@ export default function modals() {
         $("#modal-delete").addClass("active");
       });
         
+      $(".btn-edit").click(() => {      
+      });
       //Next
         let modalCount = $(".modal-create").length;
         let modalId = 0;
@@ -42,7 +49,5 @@ export default function modals() {
         $(".modal").removeClass("active");
         modalId = 0;
       });
-
-      //
 }
 

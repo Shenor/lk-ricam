@@ -3,9 +3,9 @@ export default function createClientModal(){
         let table = document.querySelector('#table-body-modal-contacts');
         let row = document.createElement("tr"); 
         row.className = "table-body-modal-contacts-row"
-        row.innerHTML =  `<td><input class="form-input-contact-dynamics text-center form-input" type="text" placeholder="Ф.И.О"></td>
-                          <td><input class="form-input-contact-dynamics text-center form-input" type="text" placeholder="Должность"></td>
-                          <td><input class="form-input-contact-dynamics text-center form-input phone" type="text" placeholder="+7 (___) ___-____"></td>
+        row.innerHTML =  `<td><input class="no-border text-center form-input" type="text" placeholder="Ф.И.О"></td>
+                          <td><input class="no-border text-center form-input" type="text" placeholder="Должность"></td>
+                          <td><input class="no-border text-center form-input phone" type="text" placeholder="+7 (___) ___-____"></td>
                           <td><i class="icon icon-cross icon-cross-modal-contact"></i></td>`;
         table.append(row);
     });   
@@ -21,8 +21,8 @@ export default function createClientModal(){
                             <option value="TeamViewer">TeamViewer</option>
                             </select>
                           </td>
-                          <td><input class="form-input-connect-dynamics text-center form-input readble" type="text" id="input-example-1" placeholder="ID"></td>
-                          <td><input class="form-input-connect-dynamics text-center form-input readble" type="text" id="input-example-1" placeholder="Наименование"></td>
+                          <td><input class="no-border text-center form-input readble" type="text" id="input-example-1" placeholder="ID"></td>
+                          <td><input class="no-border text-center form-input readble" type="text" id="input-example-1" placeholder="Наименование"></td>
                           <td><i class="icon icon-cross icon-cross-modal-connect"></i></td>`;
         table.append(row);
     }); 

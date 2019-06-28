@@ -6,7 +6,7 @@ const {Client} = require('./../database');
     router.get('/', (req, res) => {
        
         Client.find({}, function (err, docs){
-            res.render('index.hbs', docs[0])
+            res.status(200).render('index.hbs', docs[0])
         });
     });
 
