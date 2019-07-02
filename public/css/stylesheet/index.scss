@@ -37,12 +37,14 @@ i {
     border-top: .05rem solid $border-color;
 }
 
-.modal-create-page-1{
-    max-width: 700px !important;
+.modal-create-page-1,
+.modal-edit-page-1{
+   max-width: 700px !important;
 }
-  
-  .modal-create-page-2{
-    max-width: 1000px !important;
+
+.modal-create-page-2,
+.modal-edit-page-2{
+  max-width: 1000px !important;
 }
 
 #main-select{
@@ -148,4 +150,12 @@ padding: .4rem .2rem;
   ::hover{
     background: #eef0f3;
   }
+}
+
+.button-control{
+  padding: 0 .8rem;
+}
+
+.selected{
+  background: #eef0f3;
 }

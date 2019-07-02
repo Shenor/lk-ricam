@@ -10,6 +10,7 @@
     margin-top: 10px;
     border: 1px solid $border-color;
     padding: 2px;
+    overflow: hidden;
 
         .form-legend {
             background:$general-color;
@@ -33,7 +34,8 @@
             border: none;
           }
 
-          .icon-createModal-equipmentList{
+          .icon-createModal-equipmentList,
+          .icon-editModal-equipmentList{
             right: .4rem;
           }
           

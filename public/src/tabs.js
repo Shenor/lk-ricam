@@ -13,4 +13,12 @@ export default function tabs() {
         $(".tab-item-createModal-equiequpmentList").removeClass("active").eq($(this).index()).addClass("active");
         $(".panel-info-createModal-equiequpmentList").hide().eq($(this).index()).fadeIn();
     }).eq(0).addClass("active");
+
+    //EditModal tabs
+    $('.panel-info-editModal-equiequpmentList').not(':first').hide();
+
+    $('.tab-item-editModal-equiequpmentList').click(function () {
+        $(".tab-item-editModal-equiequpmentList").removeClass("active").eq($(this).index()).addClass("active");
+        $(".panel-info-editModal-equiequpmentList").hide().eq($(this).index()).fadeIn();
+    }).eq(0).addClass("active");
 }

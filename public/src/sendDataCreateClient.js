@@ -18,10 +18,10 @@ export default function sendDataCreateClient() {
         bufferContact = [],
         bufferConnect = [];
    
-        body.name = $('#name').val();
-        body.legalAdress = $('#legalAdress').val();
-        body.actualAdress = $('#actualAdress').val();
-        body.contractStatus = $('#contract-modal').val();
+        body.name = $('#createModal-name').val();
+        body.legalAdress = $('#createModal-legalAdress').val();
+        body.actualAdress = $('#createModal-actualAdress').val();
+        body.contractStatus = $('#createModal-contract-modal').val();
    
         //Table contact
         
@@ -46,8 +46,6 @@ export default function sendDataCreateClient() {
 
         //FiscalRegistr
         $(".column-fn").each((idx, element) => {
-          let fTm=$(element).children(".column")[1].children[1].children[0].children[0].children[1].value,
-              dDt=$(element).children(".column")[1].children[2].children[0].value;
           body.fiscal[idx] = {
             fiscalRegistr: {},
             fiscalDrive: {}
@@ -101,7 +99,8 @@ export default function sendDataCreateClient() {
           body.printer[idx].printerNumber = $(element).children(".column")[1].children[1].children[0].children[0].value;
           body.printer[idx].printerConnectionType = $(element).children(".column")[1].children[1].children[1].children[0].value;
         });
-
+        
+        //Libra
         $(".column-libra").each((idx, element) => {
           body.libra[idx] = {};
           body.libra[idx].libraModel = $(element).children(".column")[0].children[1].value;

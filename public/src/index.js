@@ -3,6 +3,7 @@ import modals from './modals';
     import selected from './selected';
     import sendDataCreateClient from './sendDataCreateClient';
     import sendDataDeleteClient from './sendDataDeleteClient';
+    import sendDataEditClient from './sendDataEditClient';
     import createClientModal from './createClientModal';
     import CreateClientBlocksEquipmentList from './CreateClientBlocksEquipmentList'
     import toggleEquipmentList from './toggleEquipmentList';
@@ -29,13 +30,16 @@ window.addEventListener("DOMContentLoaded", function() {
     selected(data, myData, fullData, id);
 
     //Modal
-    modals(id, fullData);
+    modals();
 
     //Create new Client
     sendDataCreateClient();
 
     //DeleteClient
     sendDataDeleteClient();
+
+    //EditClient
+    sendDataEditClient();
 
     //Tabs
     tabs();
@@ -48,8 +52,10 @@ window.addEventListener("DOMContentLoaded", function() {
 
     //
     toggleEquipmentList();
-
+    
     //
+    // editablePage(fullData);
+    
     editorTD();
     });
   });

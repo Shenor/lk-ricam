@@ -1,53 +1,69 @@
 
-export default function modals(id, fullData) {
+export default function modals() {
+  $(".btn-plus").click(() => {
+    $("#modal-create").addClass("active");
+  });
 
-    $(".btn-plus").click(() => {
-        $('#name').val('');
-        $('#legalAdress').val('');
-        $('#actualAdress').val('');
-        $('#contract-modal').val('');
+  $(".btn-delete").click(() => {
+    $("#modal-delete").addClass("active");
+  });
 
-        $("#modal-create").addClass("active");
-      });
-    
-      $(".btn-delete").click(() => {
-        $("#modal-delete").addClass("active");
-      });
-        
-      $(".btn-edit").click(() => {      
-      });
-      //Next
-        let modalCount = $(".modal-create").length;
-        let modalId = 0;
+  // Modale close
+  $(".btn-close").click((e) => {
+    $("#modal-create").removeClass("active");
+    $("#modal-delete").removeClass("active");
+    $("#modalConfirmEdit").removeClass("active");
+  });
 
-      $(".btn-next").click(() => {
-        modalId < modalCount - 1 ? modalId++ : false;
-        let nextModal = $(".modal-create")[modalId];
-        let previousModal  = $(".modal-create")[modalId - 1];
-        $(previousModal).removeClass("active");
-        $(nextModal).addClass("active");
-      });
+  $(".btn-clear").click(() => {
+    $(".modal").removeClass("active");
+    modalCreateId = 0;
+  });
 
-      //Back
-      $(".btn-back").click(() => {
-        let Modal = $(".modal-create")[modalId];
-        modalId--;
-        let backModal = $(".modal-create")[modalId];
-        
-        $(Modal).removeClass("active");
-        $(backModal).addClass("active");
-      });
+   //------NextCreate--------//
+   let modalCreateCount = $(".modal-create").length;
+   let modalCreateId = 0;
 
+ $(".btn-next").click(() => {
+  modalCreateId < modalCreateCount - 1 ?  modalCreateId++ : false;
+   let nextModal = $(".modal-create")[modalCreateId];
+   let previousModal  = $(".modal-create")[modalCreateId - 1];
+   $(previousModal).removeClass("active");
+   $(nextModal).addClass("active");
+ });
+//-----------------------//
+//------BackCreate------//
+ $(".btn-back").click(() => {
+   let Modal = $(".modal-create")[modalCreateId];
+   modalCreateId --;
+   let backModal = $(".modal-create")[modalCreateId];
+   
+   $(Modal).removeClass("active");
+   $(backModal).addClass("active");
+ });
 
-        // modale close
-      $(".btn-close").click((e) => {
-        $("#modal-create").removeClass("active");
-        $("#modal-delete").removeClass("active");
-      });
-    
-      $(".btn-clear").click(() => {
-        $(".modal").removeClass("active");
-        modalId = 0;
-      });
+//........................///
+
+ //---NextEdit-----//
+ let modalEditCount = $(".modal-edit").length;
+ let modalEditId = 0;
+
+$(".btn-next-edit").click(() => {
+  modalEditId < modalEditCount - 1 ? modalEditId++ : false;
+ let nextModal = $(".modal-edit")[modalEditId];
+ let previousModal  = $(".modal-edit")[modalEditId - 1];
+ $(previousModal).removeClass("active");
+ $(nextModal).addClass("active");
+});
+//---------------//
+//----BackEdit-------//
+$(".btn-back-edit").click(() => {
+ let Modal = $(".modal-edit")[modalEditId];
+ modalEditId--;
+ let backModal = $(".modal-edit")[modalEditId];
+ 
+ $(Modal).removeClass("active");
+ $(backModal).addClass("active");
+});
 }
 

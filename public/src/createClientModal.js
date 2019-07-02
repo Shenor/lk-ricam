@@ -1,5 +1,5 @@
 export default function createClientModal(){
-    $(".icon-edit-span-contact").click(() => {
+    $(".icon-add-span-contact").click(() => {
         let table = document.querySelector('#table-body-modal-contacts');
         let row = document.createElement("tr"); 
         row.className = "table-body-modal-contacts-row"
@@ -10,7 +10,7 @@ export default function createClientModal(){
         table.append(row);
     });   
 
-    $(".icon-edit-span-connect").click(() => {
+    $(".icon-add-span-connect").click(() => {
         let table = document.querySelector('#table-body-modal-connects');
         let row = document.createElement("tr"); 
         row.className = "table-body-modal-connects-row"
@@ -24,6 +24,34 @@ export default function createClientModal(){
                           <td><input class="no-border text-center form-input readble" type="text" id="input-example-1" placeholder="ID"></td>
                           <td><input class="no-border text-center form-input readble" type="text" id="input-example-1" placeholder="Наименование"></td>
                           <td><i class="icon icon-cross icon-cross-modal-connect"></i></td>`;
+        table.append(row);
+    }); 
+
+    $(".icon-edit-span-contact").click(() => {
+        let table = document.querySelector('#table-body-edit-modal-contacts');
+        let row = document.createElement("tr"); 
+        row.className = "table-body-modal-contacts-row"
+        row.innerHTML =  `<td><input class="no-border text-center form-input" type="text" placeholder="Ф.И.О"></td>
+                          <td><input class="no-border text-center form-input" type="text" placeholder="Должность"></td>
+                          <td><input class="no-border text-center form-input phone" type="text" placeholder="+7 (___) ___-____"></td>
+                          <td><i class="icon icon-cross icon-cross-edit-modal"></i></td>`;
+        table.append(row);
+    });   
+
+    $(".icon-edit-span-connect").click(() => {
+        let table = document.querySelector('#table-body-edit-modal-connects');
+        let row = document.createElement("tr"); 
+        row.className = "table-body-modal-connects-row"
+        row.innerHTML =  `<td>
+                            <select class="form-select third-select readble" id="connect-modal">
+                            <option  value="AmmyAdmin">AmmyAdmin</option>
+                            <option value="AnyDesk">AnyDesk</option>
+                            <option value="TeamViewer">TeamViewer</option>
+                            </select>
+                          </td>
+                          <td><input class="no-border text-center form-input readble" type="text" id="input-example-1" placeholder="ID"></td>
+                          <td><input class="no-border text-center form-input readble" type="text" id="input-example-1" placeholder="Наименование"></td>
+                          <td><i class="icon icon-cross icon-cross-edit-modal"></i></td>`;
         table.append(row);
     }); 
 }
