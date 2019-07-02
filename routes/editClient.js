@@ -8,6 +8,8 @@ router.post('/editClient', (req, res) => {
         let body = JSON.parse(data);
         const {name} = body;
 
+        global.lastUpdateName = name;
+
     Client.replaceOne({name: name}, body).then(()=>{console.log("Edited!!!")});
     res.send({data: "Данные успешно обновлены !"});
     });

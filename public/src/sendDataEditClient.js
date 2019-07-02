@@ -115,11 +115,10 @@ export default function sendDataEditClient(){
                 data: JSON.stringify(body)
               }).done((data) => {
                 $("#notificationCreate").fadeIn("slow");
+               
                 setTimeout(() => {
-                  $("#notificationCreate").fadeOut("slow")}, 3000);
-                console.log(data);
+                 location.reload() }, 3000);                //$("#notificationCreate").fadeOut("slow")
               });               
-            console.log(body);
         });
       });   
 }

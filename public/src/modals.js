@@ -43,27 +43,5 @@ export default function modals() {
  });
 
 //........................///
-
- //---NextEdit-----//
- let modalEditCount = $(".modal-edit").length;
- let modalEditId = 0;
-
-$(".btn-next-edit").click(() => {
-  modalEditId < modalEditCount - 1 ? modalEditId++ : false;
- let nextModal = $(".modal-edit")[modalEditId];
- let previousModal  = $(".modal-edit")[modalEditId - 1];
- $(previousModal).removeClass("active");
- $(nextModal).addClass("active");
-});
-//---------------//
-//----BackEdit-------//
-$(".btn-back-edit").click(() => {
- let Modal = $(".modal-edit")[modalEditId];
- modalEditId--;
- let backModal = $(".modal-edit")[modalEditId];
- 
- $(Modal).removeClass("active");
- $(backModal).addClass("active");
-});
 }
 

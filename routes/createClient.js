@@ -6,6 +6,9 @@ const {Client} = require('./../database');
 router.post('/createClient', (req, res) => {
     req.on('data', (data) => {    
         let body = JSON.parse(data);
+        let {name} = body;
+        
+        global.lastUpdateName = name;
 
         const user = new Client({name, legalAdress, actualAdress, contractStatus, contact, connect, fiscal,
                                  barcodeScanner, moneyBox, switchboard, monoBlock, printer, libra} = body);

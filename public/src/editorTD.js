@@ -11,7 +11,7 @@ export default function editorTD() {
     $('.main-table').on('dblclick', (ev) => {
       let target = ev.target;
       const attr = $(target).attr('readonly');
-      
+
       if(typeof attr != typeof undefined && attr == "readonly"){
         return false;
       }else{
