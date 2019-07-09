@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const hbs = require('hbs');
 
 const indexRouter = require('./routes/indexRouter');
+const userRouter = require('./routes/userRouter');
 const getDatabaseRouter = require('./routes/getDatabase');
 const createClientRouter = require('./routes/createClient');
 const deleteClientRouter = require('./routes/deleteClient');
@@ -21,12 +22,12 @@ app.use((express.static(__dirname + '/public')));
 
 app.use(headersRouter);
 app.use('/', indexRouter);
+app.use('/user', userRouter);
+app.use('/database', getDatabaseRouter);
+app.use('/dataHeader', getDataHeaderRouter);
+app.use('/createClient', createClientRouter);
+app.use('/deleteClient', deleteClientRouter);
+app.use('/editClient', editClientRouter);
 
-app.all('/database', getDatabaseRouter);
-app.all('/dataHeader', getDataHeaderRouter);
-app.post('/createClient', createClientRouter);
-app.post('/deleteClient', deleteClientRouter);
-app.post('/editClient', editClientRouter);
 
-
-app.listen(3000, () => console.log('Server running at http://192.168.1.25:3000/'));
+app.listen(3000, () => console.log('Server running ...'));

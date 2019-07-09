@@ -1,24 +1,31 @@
-export default function selected(data, myData, fullData, id) {
+export default function selected(myData, fullData, id) {
   let select = document.querySelector(".main-select"),
-    title = document.querySelector(".panel-title"),
-    legalAdress = document.querySelector("#legal-adress"),
-    actualAdress = document.querySelector("#actual-adress"),
-    contractStatus = document.querySelector("#contract"),
-    tbodyContact = document.querySelector("#table-body-contacts"),
-    tbodyConnect = document.querySelector("#table-body-connect"),
-    tbodyEquipFiscal = document.querySelector("#table-fiscal"),
-    tbodyEquipSwitchboard = document.querySelector("#table-switchboard"),
-    tbodyEquipMnbk = document.querySelector("#table-monoBlock"),
-    tbodyEquipMoneyBox = document.querySelector("#table-moneyBox"),
-    tbodyEquipPrinter = document.querySelector("#table-printer"),
-    tbodyEquipBarcodeScanner = document.querySelector("#table-barcodeScanner"),
-    tbodyEquiplibra = document.querySelector("#table-libra");
+      title = document.querySelector(".panel-title"),
+      adressLeg= document.querySelector("#legal-adress"),
+      adresAct = document.querySelector("#actual-adress"),
+      statusContract = document.querySelector("#contract"),
+      tbodyContact = document.querySelector("#table-contacts"),
+      tbodyConnect = document.querySelector("#table-connect"),
+      tbodyEquipFiscal = document.querySelector("#table-fiscal"),
+      tbodyEquipSwitchboard = document.querySelector("#table-switchboard"),
+      tbodyEquipMnbk = document.querySelector("#table-monoBlock"),
+      tbodyEquipMoneyBox = document.querySelector("#table-moneyBox"),
+      tbodyEquipPrinter = document.querySelector("#table-printer"),
+      tbodyEquipBarcodeScanner = document.querySelector("#table-barcodeScanner"),
+      tbodyEquiplibra = document.querySelector("#table-libra");
 
-  fullData.forEach((elem, idx) => {
-    $(".main-select").append($(`<option value = ${idx}>${elem.name}</option>`));
-  });
+      console.log(title.textContent);
+      fullData
+      .filter((arr, idx) => {   
+        if (title.textContent === arr.name){
+          $(".main-select").append($(`<option value = ${idx} selected >${arr.name}</option>`));
+        }  else {
+          $(".main-select").append($(`<option value = ${idx}>${arr.name}</option>`));
+        }
+      });
 
   function tableContent(tab, table) {
+    $(`#${$(table).attr("id")} tr`).remove();
     for (let i = 0; i < myData[tab].length; i++) {
       let row = document.createElement("tr");
       myData[tab][i].forEach(element => {
@@ -32,6 +39,7 @@ export default function selected(data, myData, fullData, id) {
 
   //Супер кастыльный код
   function tableContentEquip(tab, table) {
+    $(`#${$(table).attr("id")} tr`).remove();
     moment.locale("ru");
     let fT,
       obj = myData[tab];
@@ -51,14 +59,15 @@ export default function selected(data, myData, fullData, id) {
             //если свойства тоже, объект, то запускаем заново функцию
             interage(elem);
           } else if (key == "fiscalTime") {
-            fT = parseInt(elem);
             let td = document.createElement("td");
-            td.innerText = elem;
-            row.append(td);
+                fT = parseInt(elem);
+                td.className = "fTime";
+                td.innerText = elem;
+                row.append(td);
           } else if (key == "fiscalDate") {
             let fD = elem,
               fEndDate = moment(fD, "DD.MM.YYYY")
-                .add(fT, "week")
+                .add(fT, "month")
                 .format("DD-MM-YYYY"),
               fleftDate = moment(fEndDate, "DD-MM-YYYY"),
               td = document.createElement("td"),
@@ -87,24 +96,14 @@ export default function selected(data, myData, fullData, id) {
     id = select.value;
     myData = fullData[id];
 
-    title.textContent = fullData[id].name;
-    legalAdress.textContent = fullData[id].legalAdress;
-    actualAdress.textContent = fullData[id].actualAdress;
-    contractStatus.textContent = fullData[id].contractStatus;
+    let {name, legalAdress, actualAdress, contractStatus} = fullData[id];
 
-    $("#table-body-contacts tr").remove();
-    $("#table-body-connect tr").remove();
-    $("#table-fiscal tr").remove();
-    $("#table-switchboard tr").remove();
-    $("#table-monoBlock tr").remove();
-    $("#table-moneyBox tr").remove();
-    $("#table-printer tr").remove();
-    $("#table-barcodeScanner tr").remove();
-    $("#table-libra tr").remove();
+    title.textContent = name;
+    adressLeg.textContent = legalAdress;
+    adresAct.textContent = actualAdress;
+    statusContract.textContent = contractStatus;
 
-    //Table Contact
     tableContent("contact", tbodyContact);
-    //Table Connect
     tableContent("connect", tbodyConnect);
     tableContentEquip("fiscal", tbodyEquipFiscal);
     tableContentEquip("switchboard", tbodyEquipSwitchboard);

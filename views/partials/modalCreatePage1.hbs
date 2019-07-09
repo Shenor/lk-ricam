@@ -25,7 +25,7 @@
           <div class="column col-6 ">
             <div class="form-group cool-input">
               <input class="form-input cool-input__input" type="text" id="createModal-legalAdress">
-              <span class="cool-input__placeholder">Юридический адрес</span>
+              <span class="cool-input__placeholder">Юридическое наименование</span>
             </div>
             <div class="form-group cool-input mt-10">
               <input class="form-input cool-input__input" type="text" id="createModal-actualAdress">
@@ -39,7 +39,7 @@
                 class="icon icon-plus icon-plus-modal-contact"></i></span></legend>
           <div class="form-group text-dark text-left">
 
-            <table class="table table-createModal-contact text-center" id="table-dynamics-createModal-contact"
+            <table class="table table-createModal-contact table-createModal text-center" id="table-dynamics-createModal-contact"
               cellspacing="0" width="100%">
               <thead>
                 <tr class="tab-title table-striped">
@@ -50,8 +50,12 @@
                 </tr>
               </thead>
               <tbody id="table-body-modal-contacts">
-                <!--  -->
-
+                <tr class="table-body-modal-contacts-row">
+                  <td><input class="no-border text-center form-input" type="text" placeholder="Ф.И.О"></td>
+                  <td><input class="no-border text-center form-input" type="text" placeholder="Должность"></td>
+                  <td><input class="no-border text-center form-input phone" type="text" placeholder="+7 (___) ___-____"></td>
+                  <td><i class="icon icon-cross icon-cross-edit-modal"></i></td>
+                </tr>
               </tbody>
             </table>
         </fieldset>
@@ -60,7 +64,7 @@
               class="icon-add-span-connect"><i
                 class="icon icon-plus icon-plus-modal-connect"></i></span></legend>
           <div class="form-group text-dark text-left">
-            <table class="table table-createModal-connect text-center" id="table-dynamics-createModalconnectt"
+            <table class="table table-createModal-connect table-createModal text-center" id="table-dynamics-createModalconnectt"
               cellspacing="0" width="100%">
               <thead>
                 <tr class="tab-title table-striped">
@@ -71,8 +75,18 @@
                 </tr>
               </thead>
               <tbody id="table-body-modal-connects">
-                <!--  -->
-
+                <tr class="table-body-modal-connects-row">
+                  <td>
+                    <select class="form-select third-select readble" id="connect-modal">
+                    <option  value="AmmyAdmin">AmmyAdmin</option>
+                    <option value="AnyDesk">AnyDesk</option>
+                    <option value="TeamViewer">TeamViewer</option>
+                    </select>
+                  </td>
+                  <td><input class="no-border text-center form-input readble" type="text" id="input-example-1" placeholder="ID"></td>
+                  <td><input class="no-border text-center form-input readble" type="text" id="input-example-1" placeholder="Наименование"></td>
+                  <td><i class="icon icon-cross icon-cross-edit-modal"></i></td>
+                </tr>
               </tbody>
             </table>
           </div>

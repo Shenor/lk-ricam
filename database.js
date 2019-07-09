@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-require('./src/models/client_model');
+require('./models/client_model');
 
 mongoose.Promise = global.Promise;
 

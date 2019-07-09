@@ -3,19 +3,17 @@ const router = express.Router();
 
 const {Client} = require('./../database');
 
-router.post('/createClient', (req, res) => {
+router.post('/', (req, res) => {
     req.on('data', (data) => {    
         let body = JSON.parse(data);
+
         let {name} = body;
-        
         global.lastUpdateName = name;
 
-        const user = new Client({name, legalAdress, actualAdress, contractStatus, contact, connect, fiscal,
-                                 barcodeScanner, moneyBox, switchboard, monoBlock, printer, libra} = body);
+        const user = new Client(body);
 
-        console.log(body);
 
-        user.save().then().catch((e) => console.log(e));
+        user.save().then().catch((err) => console.log(err));
     });
     res.send({data: "Данные успешно добавлены !"});
 });

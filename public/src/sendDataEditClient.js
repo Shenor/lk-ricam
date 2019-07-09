@@ -109,7 +109,7 @@ export default function sendDataEditClient(){
 
             $.ajax({
                 type: "POST",
-                url: "http://192.168.1.25:3000/editClient",
+                url: url + "/editClient",
                 crossDomian: true,
                 dataType: "json",
                 data: JSON.stringify(body)

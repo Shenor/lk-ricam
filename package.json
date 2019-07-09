@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "express": "^4.17.0",
+    "express-handlebars": "^3.1.0",
     "express-hbs": "^2.1.2",
     "hbs": "^4.0.4",
     "mongoose": "^5.5.10",
@@ -12,6 +13,8 @@
     "nodemon": "^1.19.0"
   },
   "devDependencies": {
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb": "^17.1.1",
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2"
   },

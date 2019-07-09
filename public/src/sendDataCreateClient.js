@@ -1,4 +1,4 @@
-export default function sendDataCreateClient() {
+export default function sendDataCreateClient(url) {
     $(".btn-create").click(() => {
         let body = {
           name: '',
@@ -85,10 +85,10 @@ export default function sendDataCreateClient() {
         //Monoblock
         $(".column-mnbk").each((idx, element) => {
           body.monoBlock[idx] = {};
-          body.monoBlock[idx].model = $(element).children(".column")[0].children[1].children[1].value;
+          body.monoBlock[idx].model = $(element).children(".column")[0].children[1].children[0].value;
           body.monoBlock[idx].monoBlockSN = $(element).children(".column")[0].children[2].children[1].value;
           body.monoBlock[idx].hardDrive = $(element).children(".column")[0].children[3].children[0].value;
-          body.monoBlock[idx].state = $(element).children(".column")[1].children[1].children[1].value;
+          body.monoBlock[idx].state = $(element).children(".column")[1].children[1].value;
           body.monoBlock[idx].notes = $(element).children(".column")[1].children[2].value;  
         });
 
@@ -109,18 +109,24 @@ export default function sendDataCreateClient() {
         });
 
         body.connect = bufferConnect;
-        
-         $.ajax({
-           type: "POST",
-           url: "http://192.168.1.25:3000/createClient", //192.168.1.25
-           crossDomian: true,
-           dataType: "json",
-           data: JSON.stringify(body)
-         }).done((data) => {
-          $(".modal").removeClass("active");
-          $("#notificationCreate").fadeIn("slow");
+        if($(".fn-date").hasClass("error") || $('#createModal-name').val() == ''){
+          console.log("object");
+          $("#modal-attempt").fadeIn("slow");;
           setTimeout(() => {
-            location.reload()}, 3000);
-    });
+            $("#modal-attempt").fadeOut("slow");}, 6000);
+        } else {
+          $.ajax({
+            type: "POST",
+            url: url + "/createClient", //192.168.1.25
+            crossDomian: true,
+            dataType: "json",
+            data: JSON.stringify(body)
+          }).done((data) => {
+           $(".modal").removeClass("active");
+           $("#notificationCreate").fadeIn("slow");
+           setTimeout(() => {
+             location.reload()}, 3000);
+       });
+      }       
   });
 }
