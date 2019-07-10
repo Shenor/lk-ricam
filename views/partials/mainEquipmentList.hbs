@@ -20,14 +20,16 @@
                       </tr>
                     </thead>
                     <tbody class="main-table" id="table-fiscal">
-                         {{#each fiscal}}
+                         {{#each doc.fiscal}}                    
                             <tr>
-                              <td>{{fiscalRegistr.fiscalModel}}</td>
-                              <td>{{fiscalRegistr.fiscalSN}}</td>
-                              <td>{{fiscalDrive.fiscalTime}}</td>
-                              <td>{{fiscalDrive.fiscalSN}}</td>
-                              <td class="dateFn">{{fiscalDrive.fiscalDate}}</td>
-                            </tr>
+                              <td>{{ fiscalRegistr.fiscalModel }}</td>
+                              <td>{{ fiscalRegistr.fiscalSN }}</td>
+                              <td class="fnTime">{{ fiscalDrive.fiscalTime }}</td>
+                              <td>{{ fiscalDrive.fiscalSN }}</td>
+                              <td class="dateFn">{{ fiscalDrive.fiscalDate }}</td>
+                              <td class="fEndDate" readonly >{{ date.fEndDate }}</td>
+                              <td class="fLeftDate"readonly >{{ date.fLeftDate }}</td>
+                            </tr>  
                         {{/each}}
                     </tbody>
                   </table>
@@ -51,7 +53,7 @@
                       </tr>
                     </thead>
                     <tbody class="main-table" id="table-switchboard">
-                     {{#each switchboard}}
+                     {{#each doc.switchboard}}
                             <tr>
                               <td>{{login}}</td>
                               <td>{{password}}</td>
@@ -82,7 +84,7 @@
                       </tr>
                     </thead>
                     <tbody class="main-table" id="table-monoBlock">
-                     {{#each monoBlock}}
+                     {{#each doc.monoBlock}}
                             <tr>
                               <td>{{this.model}}</td>
                               <td>{{this.monoBlockSN}}</td>
@@ -110,7 +112,7 @@
                       </tr>
                     </thead>
                     <tbody class="main-table" id="table-moneyBox">
-                        {{#each moneyBox}}
+                        {{#each doc.moneyBox}}
                             <tr>
                               <td>{{this.moneyBoxModel}}</td>
                               <td>{{this.moneyBoxNumber}}</td>
@@ -132,7 +134,7 @@
                       </tr>
                     </thead>
                     <tbody class="main-table" id="table-printer">
-                     {{#each printer}}
+                     {{#each doc.printer}}
                             <tr>
                               <td>{{this.printerModel}}</td>
                               <td>{{this.printerNumber}}</td>
@@ -156,7 +158,7 @@
                       </tr>
                     </thead>
                     <tbody class="main-table" id="table-barcodeScanner">
-                     {{#each barcodeScanner}}
+                     {{#each doc.barcodeScanner}}
                             <tr>
                               <td>{{this.scannerModel}}</td>
                               <td>{{this.scannerNumber}}</td>
@@ -178,7 +180,7 @@
                       </tr>
                     </thead>
                     <tbody class="main-table" id="table-libra">
-                     {{#each libra}}
+                     {{#each doc.libra}}
                             <tr>
                               <td>{{this.libraModel}}</td>
                               <td>{{this.libraNumber}}</td>

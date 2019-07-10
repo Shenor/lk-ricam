@@ -12,7 +12,7 @@ router.post('/', (req, res) => {
         console.log(body);
 
     Client.replaceOne({name: name}, body).then(()=>{console.log("Edited!!!")}).catch((err) => console.log(err));
-    res.send({data: "Данные успешно обновлены !"});
+    
     });
 });
 module.exports = router;

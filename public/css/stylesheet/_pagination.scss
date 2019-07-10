@@ -10,7 +10,7 @@ a{
 }
 
 a:visited {
-  color:lighten($general-color, 10%) !important;
+  color:lighten($general-color, 10%);
 }
 
 .step .step-item a {

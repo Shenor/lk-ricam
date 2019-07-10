@@ -8,22 +8,19 @@
   import CreateClientBlocksEquipmentList from './CreateClientBlocksEquipmentList'
   import toggleEquipmentList from './toggleEquipmentList';
   import editorTD from './editorTD';
-  import Client from './../models/client'
+  import DataService from '../service/DataService'
 
-window.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
 
     const url = "http://192.168.1.25:3000";
-    const client = new Client();  
+    const dataService = new DataService(); 
 
-    client.getAll().then((data) => {
-   
-    let id = 1, myData, fullData;
-        fullData = JSON.parse(JSON.stringify(data));
-    
-    myData = fullData[id];  
+    (async function main() {
+
+    const data = await dataService.getAll();
 
     // Selected
-    selected(myData, fullData, id);
+    selected(data);    
 
     //Modal
     modals();
@@ -35,7 +32,7 @@ window.addEventListener("DOMContentLoaded", function() {
     sendDataDeleteClient();
 
     //EditClient
-    sendDataEditClient(url);
+    sendDataEditClient();
 
     //Tabs
     tabs();
@@ -50,5 +47,6 @@ window.addEventListener("DOMContentLoaded", function() {
     toggleEquipmentList();
     
     editorTD();
-    });
+
+  })();
   });

@@ -7,8 +7,6 @@ router.post('/', (req, res) => {
     req.on('data', (data) => {
         let body = JSON.parse(data);
         const {deleteName} = body;
-    
-    global.lastUpdateName = null;
 
     Client.deleteOne({name: deleteName}, (err) => {
         if (err) throw err;

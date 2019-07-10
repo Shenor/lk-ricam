@@ -1,23 +1,27 @@
-import Client from './../models/client';
+import DataService from '../service/DataService';
 
 export default function sendDataDeleteClient() {
+
   $('.button-delete').click(() => {
-      const client = new Client();
+      const dataService = new DataService();
 
       let delBody = {};
       delBody.deleteName = $('#delete-name').val();
 
-     client.deleteClient(delBody).then(() => {
+      dataService.deleteClient(delBody).then(() => {
         $(".form-select").load("../database", () => {
+
           fullData
             .filter(({name} = arr, idx) => {
               $(".main-select").append($(`<option value = ${idx}>${name}</option>`));
             });
+
         });
       });
+
       $(".modal").removeClass("active");
       $("#notificationDelete").fadeIn("slow");
       setTimeout(() => {
-        location.reload()}, 3000);
+        location.href = '/user/0'}, 3000);
     });
 }

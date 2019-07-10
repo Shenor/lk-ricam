@@ -7,13 +7,21 @@
         </tr>
     </thead>
     <tbody class="main-table" id="table-connect">
-        <!--  -->
-        {{#each connect}}
-        <tr>
-            <td>{{this.[0]}}</td>
-            <td>{{this.[1]}}</td>
-            <td>{{this.[2]}}</td>
-        </tr>
-        {{/each}}
+       {{!-- {{#if doc.connect.length}} --}}
+            {{#each doc.connect}}
+                <tr>
+                    <td>{{this.[0]}}</td>
+                    <td>{{this.[1]}}</td>
+                    <td>{{this.[2]}}</td>
+                </tr>
+            {{/each}}
+       {{!-- {{else}}
+            <tr>
+                <td>Введите программу</td>
+                <td>Введите ID</td>
+                <td>Введите место</td>
+            </tr>
+       {{/if}} --}}
+        
     </tbody>
 </table>
