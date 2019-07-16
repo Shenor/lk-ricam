@@ -164,6 +164,7 @@ padding: .4rem .2rem;
 #notificationCreate,
 #notificationDelete,
 #notificationEdit,
+#notificationError,
 #modal-attempt {
   position:fixed;
   bottom: 50%;
@@ -212,5 +213,34 @@ padding: .4rem .2rem;
 .block-equipment{
   legend{
     cursor: pointer;
+  }
+}
+
+
+.login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  
+  .hero{
+    box-shadow: 0 0 15px black;
+    border-radius: 10px;
+    max-width: 100%;
+    width: 300px;
+  }
+
+  .form-group{
+    width: 10rem;
+  }
+
+  .login-error{
+    text-align: center;
+    padding: .4rem;
+    border-radius: 10px;
+    background: rgba(232,86,0,.95);
+    border-color: #e85600;
+    color: white;
   }
 }

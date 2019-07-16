@@ -3,6 +3,11 @@ export default function CreateBlocksEquipmentList() {
    const content = $('.column-fn:first').clone();
    $('.fieldset-createModal-fn').append(content);
   });
+
+  $(".icon-edit-span-ofd").click(() => {
+    const content = $('.column-ofd:first').clone();
+    $('.fieldset-createModal-ofd').append(content);
+   });
   
   $(".icon-edit-span-sh").click(() => {
     const content  = $('.column-barcodeScanner:first').clone();

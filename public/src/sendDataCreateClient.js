@@ -1,6 +1,6 @@
 import DataService from '../service/DataService';
 
-export default function sendDataCreateClient(url) {
+export default function sendDataCreateClient() {
     $(".btn-create").click(() => {
       const dataService = new DataService();
       let body = {
@@ -11,6 +11,7 @@ export default function sendDataCreateClient(url) {
         contact: [],
         connect: [],
         fiscal:[],
+        ofd: [],
         barcodeScanner: [],
         moneyBox: [],
         switchboard: [],
@@ -54,13 +55,23 @@ export default function sendDataCreateClient(url) {
           fiscalDrive: {}
         };
         body.fiscal[idx].fiscalRegistr.fiscalModel = $(element).children(".column")[0].children[1].value;
-        body.fiscal[idx].fiscalRegistr.fiscalSN = $(element).children(".column")[0].children[2].children[0].value;
+        body.fiscal[idx].fiscalRegistr.fiscalSN = $(element).children(".column")[0].children[2].children[0].children[0].children[0].value;
+        body.fiscal[idx].fiscalRegistr.fiscalOfd = $(element).children(".column")[0].children[2].children[1].children[0].children[0].value;
         body.fiscal[idx].fiscalDrive.fiscalTime = $(element).children(".column")[1].children[1].children[0].children[0].children[1].value;
         body.fiscal[idx].fiscalDrive.fiscalSN = $(element).children(".column")[1].children[1].children[1].children[0].children[1].value;
         body.fiscal[idx].fiscalDrive.fiscalDate = $(element).children(".column")[1].children[2].children[0].value;     
-        // body.fiscal[idx].fiscalDrive.fiscalEndDate
       });
-      
+      //OFD
+      $(".column-ofd").each((idx, element) => {
+        body.ofd[idx] = {};
+        body.ofd[idx].addressOfd = $(element).children(".column")[0].children[1].value;
+        body.ofd[idx].ofdLogin = $(element).children(".column")[0].children[2].children[0].children[0].value;
+        body.ofd[idx].ofdPassword = $(element).children(".column")[0].children[2].children[1].children[0].value;
+        body.ofd[idx].ofdkass = $(element).children(".column")[1].children[1].children[1].children[0].children[1].value;
+        body.ofd[idx].ofdTerm = $(element).children(".column")[1].children[1].children[0].children[0].children[1].value;
+        body.ofd[idx].ofdTime = $(element).children(".column")[1].children[2].children[0].value;
+      });
+
       //Barcode Scanner
       $(".column-barcodeScanner").each((idx, element) => {
         body.barcodeScanner[idx] = {};
@@ -119,9 +130,14 @@ export default function sendDataCreateClient(url) {
       } else {
         dataService.createClient(body)
           .then((res) => {
+            if(res.error){
+              $("#notificationError").fadeIn("slow");
+              $("#notificationError").fadeOut(1500);
+            } else {
               $(".modal").removeClass("active");
               $("#notificationCreate").fadeIn("slow");
-              setTimeout(() => {location.href=`/user/${res.data}`}, 3000);
+              setTimeout(() => {location.href=`/user/${res.data}`}, 2000);
+            }
         });   
       }       
   });

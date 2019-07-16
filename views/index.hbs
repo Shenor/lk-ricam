@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-  <link rel="stylesheet" href="/css/spectre.css/spectre.min.css">
-  <link rel="stylesheet" href="/css/spectre.css/spectre-icons.min.css">
-  <link rel="shortcut icon" href="/img/favicon.ico" type="image/ico">
-  <link rel="stylesheet" href="/css/style.css">
-
-  <title>InfoPage</title>
-</head>
-
-<body>
-  <div class="container grid-xl">
+<div class="container grid-xl">
 
    {{> notification}}
 
@@ -37,27 +20,45 @@
               <div class="panel-title h4" id="name">{{doc.name}}</div>
           </div>
           <div class="fl-2">
-             <div class="panel-subtitle"><i>Статус договора: </i><span id="contract">{{doc.contractStatus}}</span></div>
-            <div class="panel-subtitle"><i>Юридический адрес: </i><span id="legal-adress">{{doc.legalAdress}}</span></div>
-            <div class="panel-subtitle"><i>Фактический адрес: </i><span id="actual-adress">{{doc.actualAdress}}</span></div>
+             <div class="panel-subtitle"><i>Статус договора: </i><span id="contract">
+              {{#if doc.contractStatus}}
+                {{doc.contractStatus}}
+              {{else}} 
+                Не указано 
+              {{/if}}
+               </span></div>
+            <div class="panel-subtitle"><i>Юридический адрес: </i><span id="legal-adress">
+              {{#if doc.legalAdress}}
+                {{doc.legalAdress}}
+              {{else}}
+                Не указано 
+              {{/if}}
+              </span></div>
+            <div class="panel-subtitle"><i>Фактический адрес: </i><span id="actual-adress">
+              {{#if doc.actualAdress}}
+                {{doc.actualAdress}}
+              {{else}}
+                Не указано 
+              {{/if}}
+              </span></div>
           </div>
         </div>
       </div>
       <div class="panel-nav">
         <ul class="tab tab-block">
-          <li class="tab-item active">
+          <li class="tab-item active" data-set="isContacts">
             <a href="#" class="tab-link">Контакты</a>
           </li>
-          <li class="tab-item ">
+          <li class="tab-item " data-set="isConnects">
             <a href="#" class="tab-link">Подключения</a>
           </li>
-          <li class="tab-item">
+          <li class="tab-item" data-set="isEquipment">
             <a href="#" class="tab-link">Список оборудования</a>
           </li>
-          <li class="tab-item">
+          <li class="tab-item" data-set="isTickets">
             <a href="#" class="tab-link">Заявки клиента</a>
           </li>
-          <li class="tab-item">
+          <li class="tab-item" data-set="isNetworkMap">
             <a href="#" class="tab-link">Карта сети</a>
           </li>
         </ul>
@@ -66,18 +67,18 @@
         <button class="btn btn-sm btn-main-add">Добавить</button>
         <button class="btn btn-sm btn-main-delete">Удалить</button>
       </div>
-      <div class="panel-body">
+        <div class="panel-body">
         <div class="panel-body-info">
           {{> mainContact}}
         </div>
-        <div class="panel-body-info">
+        <div class="panel-body-info" style="display:none">
           {{> mainConnect }}
         </div>
-        <div class="panel-body-info">
+        <div class="panel-body-info block-equipment" style="display:none">
           {{> mainEquipmentList }}
         </div>
-        <div class="panel-body-info">4</div>
-        <div class="panel-body-info">5</div>
+        <div class="panel-body-info" style="display:none">4</div>
+        <div class="panel-body-info" style="display:none">5</div>
       </div>
       <div class="panel-footer"></div>
     </div>
@@ -109,12 +110,3 @@
       {{> modalConfirmEdit}}
         
   </div>
-
-  <script src="/js/moment-with-locales.min.js"></script>
-  <script src="/js/jquery-3.4.0.min.js"></script>
-  <script src="/js/jquery.maskedinput.min.js"></script>
-  <script src="/dist/main.js"></script>
-
-</body>
-
-</html>

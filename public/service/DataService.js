@@ -1,16 +1,15 @@
 class DataService {
     constructor() {
-        this.url = "http://192.168.1.25:3000";
+        this.url = "http://192.168.1.25:3000";//192.168.1.25
     }
       
     createClient(body) {
         return new Promise((resolve, reject) => {
             $.ajax({
                 type: "POST",
-                url: this.url + "/createClient", //192.168.1.25
+                url: this.url + "/createClient", 
                 crossDomian: true,
-                dataType: "json",
-                data: JSON.stringify(body)
+                data: body
               }).done((data) => { resolve( data )})
                 .fail((err) => { reject( err ) });
         });  
@@ -22,8 +21,7 @@ class DataService {
                 type: "POST",
                 url: this.url + "/editClient",
                 crossDomian: true,
-                dataType: "json",
-                data: JSON.stringify(body)
+                data: body
               }).done(() => { resolve( )})
                 .fail((err) => { reject( err ) });
         });  
@@ -35,8 +33,7 @@ class DataService {
                 type: "POST",
                 url: this.url + "/deleteClient",
                 crossDomian: true,
-                dataType: "json",
-                data: JSON.stringify(delBody)
+                data: delBody
               }).done(data => { resolve( data )})
                 .fail((err) => { reject( err ) });
         });  

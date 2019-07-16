@@ -22,6 +22,6 @@ export default function sendDataDeleteClient() {
       $(".modal").removeClass("active");
       $("#notificationDelete").fadeIn("slow");
       setTimeout(() => {
-        location.href = '/user/0'}, 3000);
+        location.href = '/user/0'}, 2000);
     });
 }

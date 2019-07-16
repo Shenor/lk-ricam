@@ -23,6 +23,11 @@
                             </li>
                             <li class="menu-item tab-item-createModal-equiequpmentList">
                                 <a href="#">
+                                    Оператор фиск. данных
+                                </a>
+                            </li>
+                            <li class="menu-item tab-item-createModal-equiequpmentList">
+                                <a href="#">
                                     Сканер штрих-кода
                                 </a>
                             </li>
@@ -58,7 +63,8 @@
                         <div class="panel-info-createModal-equiequpmentList"></div>
                         <!-- Фискальный регистратор -->
                         <div class="panel-info-createModal-equiequpmentList">
-                            <fieldset class="form-fieldset form-fieldset-createModal-equipmentList fieldset-createModal-fn text-left"
+                            <fieldset
+                                class="form-fieldset form-fieldset-createModal-equipmentList fieldset-createModal-fn text-left"
                                 id="fieldset-createModal-equipmentList-fn">
                                 <legend class="form-legend form-legend-connect">Фискальный регистратор<span
                                         class="icon-edit-span-fn icon-edit-span-modal"><i
@@ -85,11 +91,19 @@
                                             <option>Spark-115Ф</option>
                                             <option>Shtrih</option>
                                         </select>
-
-                                        <div class="form-group mt-2">
-                                            <input class="form-input" type="text"
-                                                placeholder="Серийный номер" id="fiscalRegistrSN">
+                                        <div class="columns">
+                                            <div class="column col-6">
+                                                <div class="form-group mt-2">
+                                                    <input class="form-input" type="text" placeholder="Сер. номер" id="fiscalRegistrSN">
+                                                </div>
+                                            </div>
+                                            <div class="column col-6">
+                                                <div class="form-group mt-2">
+                                                    <input class="form-input" type="text" placeholder="Касса в ОФД" id="fiscalRegistrOfd">
+                                                </div>
+                                            </div>
                                         </div>
+
                                     </div>
                                     <div class="column col-6">
                                         <div class="divider divider-createModal-equipmentList text-center"
@@ -115,19 +129,86 @@
                                         </div>
 
                                         <div class="form-group mt-2">
-                                            <input class="form-input fn-date" type="text"
-                                                   placeholder="Дата установки" id="fiscalDate"
-                                                   >
+                                            <input class="form-input fn-date" type="text" placeholder="Дата установки"
+                                                id="fiscalDate">
                                         </div>
-                                       
+
                                     </div>
-                                     <div class="divider text-center col-12" data-content=""></div>
-                                </div>                               
+                                    <div class="divider text-center col-12" data-content=""></div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <!-- ОФД -->
+                        <div class="panel-info-createModal-equiequpmentList">
+                            <fieldset
+                                class="form-fieldset form-fieldset-createModal-equipmentList fieldset-createModal-ofd text-left"
+                                id="fieldset-createModal-equipmentList-ofd">
+                                <legend class="form-legend form-legend-connect">ОФД<span
+                                        class="icon-edit-span-ofd icon-edit-span-modal"><i
+                                            class="icon icon-plus icon-plus-modal-contact"></i></span></legend>
+
+                                <div class="columns p-relative column-ofd">
+                                    <i class="icon icon-cross icon-createModal-equipmentList p-absolute"></i>
+                                    <div class="column col-6">
+                                        <div class="divider divider-createModal-equipmentList text-center"
+                                            data-content=""></div>
+
+                                        <select class="form-select four-select ofdType">
+                                            <option disabled selected>-Выберите адрес-</option>
+                                            <option>Платформа ОФД</option>
+                                            <option>1 ОФД</option>
+                                            <option>Яндекс ОФД</option>
+                                            <option>Эвотор ОФД</option>
+                                            <option>Контур ОФД</option>
+                                        </select>
+
+                                        <div class="columns mt-2">
+                                            <div class="column col-6">
+                                                <input class="form-input" type="text" placeholder="Логин" id="ofdLogin">
+                                            </div>
+                                            <div class="column col-6">
+                                                <input class="form-input" type="text" placeholder="Пароль"
+                                                    id="ofdPassword">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column col-6">
+                                        <div class="divider divider-createModal-equipmentList text-center"
+                                            data-content=""></div>
+                                        <div class="columns">
+                                            <div class="column col-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Срок</span>
+                                                    <select class="form-select four-select" id="ofdlTime">
+                                                        <option disabled selected>...</option>
+                                                        <option value="12">12 мес.</option>
+                                                        <option value="36">36 мес.</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="column col-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Касса</span>
+                                                    <input type="text" class="form-input" placeholder="..."
+                                                        id="ofdKass">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group mt-2">
+                                            <input class="form-input ofd-date" type="text" placeholder="Дата активации"
+                                                id="ofdDate">
+                                        </div>
+
+                                    </div>
+                                    <div class="divider text-center col-12" data-content=""></div>
+                                </div>
                             </fieldset>
                         </div>
                         <!-- Сканер штрих-кода -->
                         <div class="panel-info-createModal-equiequpmentList">
-                            <fieldset class="form-fieldset form-fieldset-createModal-equipmentList fieldset-createModal-sh text-left"
+                            <fieldset
+                                class="form-fieldset form-fieldset-createModal-equipmentList fieldset-createModal-sh text-left"
                                 id="fieldset-createModal-equipmentList-sh">
                                 <legend class="form-legend form-legend-connect">Сканер штрих-кода<span
                                         class="icon-edit-span-modal"><i
@@ -151,14 +232,15 @@
                                         <div class="divider divider-createModal-equipmentList text-center"
                                             data-content=""></div>
                                         <input class="form-input cool-input__input" type="text" placeholder="Кол-во">
-                                    </div>  
-                                    <div class="divider text-center col-12" data-content=""></div>                                    
-                                </div>  
+                                    </div>
+                                    <div class="divider text-center col-12" data-content=""></div>
+                                </div>
                             </fieldset>
                         </div>
                         <!-- Денежный ящик -->
                         <div class="panel-info-createModal-equiequpmentList">
-                            <fieldset class="form-fieldset form-fieldset-createModal-equipmentList fieldset-createModal-moneyBox text-left"
+                            <fieldset
+                                class="form-fieldset form-fieldset-createModal-equipmentList fieldset-createModal-moneyBox text-left"
                                 id="fieldset-createModal-equipmentList-moneyBox">
                                 <legend class="form-legend form-legend-connect">Денежный ящик<span
                                         class="icon-edit-span-modal"><i
@@ -181,13 +263,14 @@
                                             data-content=""></div>
                                         <input class="form-input cool-input__input" type="text" placeholder="Кол-во">
                                     </div>
-                                <div class="divider text-center col-12" data-content=""></div>
+                                    <div class="divider text-center col-12" data-content=""></div>
                                 </div>
                             </fieldset>
                         </div>
                         <!-- Коммутатор -->
                         <div class="panel-info-createModal-equiequpmentList">
-                            <fieldset class="form-fieldset form-fieldset-createModal-equipmentList fieldset-createModal-com text-left"
+                            <fieldset
+                                class="form-fieldset form-fieldset-createModal-equipmentList fieldset-createModal-com text-left"
                                 id="fieldset-createModal-equipmentList-com">
                                 <legend class="form-legend form-legend-connect">Коммутатор<span
                                         class="icon-edit-span-modal icon-edit-span-com"><i
@@ -221,13 +304,14 @@
                                     <div class="column col-12">
                                         <textarea class="form-input mt-2" placeholder="Заметки" rows="2"></textarea>
                                     </div>
-                                <div class="divider text-center col-12" data-content=""></div>
+                                    <div class="divider text-center col-12" data-content=""></div>
                                 </div>
                             </fieldset>
                         </div>
                         <!-- Моноблок -->
                         <div class="panel-info-createModal-equiequpmentList">
-                            <fieldset class="form-fieldset form-fieldset-createModal-equipmentList fieldset-createModal-mnbk text-left"
+                            <fieldset
+                                class="form-fieldset form-fieldset-createModal-equipmentList fieldset-createModal-mnbk text-left"
                                 id="fieldset-createModal-equipmentList-mnbk">
                                 <legend class="form-legend form-legend-connect">Моноблок<span
                                         class="icon-edit-span-modal icon-edit-span-mnbk"><i
@@ -273,13 +357,14 @@
                                         </select>
                                         <textarea class="form-input mt-2" placeholder="Заметки" rows="3"></textarea>
                                     </div>
-                                <div class="divider text-center col-12" data-content=""></div>
+                                    <div class="divider text-center col-12" data-content=""></div>
                                 </div>
                             </fieldset>
                         </div>
                         <!-- Принтер -->
                         <div class="panel-info-createModal-equiequpmentList">
-                            <fieldset class="form-fieldset form-fieldset-createModal-equipmentList fieldset-createModal-prnt text-left"
+                            <fieldset
+                                class="form-fieldset form-fieldset-createModal-equipmentList fieldset-createModal-prnt text-left"
                                 id="fieldset-createModal-equipmentList-prnt">
                                 <legend class="form-legend form-legend-connect">Принтер<span
                                         class="icon-edit-span-modal icon-edit-span-prnt"><i
@@ -315,13 +400,14 @@
                                         </div>
                                     </div>
                                 </div>
-                        <div class="divider text-center col-12" data-content=""></div>
+                                <div class="divider text-center col-12" data-content=""></div>
                         </div>
                         </fieldset>
                     </div>
                     <!-- Весы -->
                     <div class="panel-info-createModal-equiequpmentList">
-                        <fieldset class="form-fieldset form-fieldset-createModal-equipmentList fieldset-createModal-vs text-left"
+                        <fieldset
+                            class="form-fieldset form-fieldset-createModal-equipmentList fieldset-createModal-vs text-left"
                             id="fieldset-createModal-equipmentList-vs">
                             <legend class="form-legend form-legend-connect">Весы<span
                                     class="icon-edit-span-modal icon-edit-span-vs"><i
@@ -357,7 +443,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            <div class="divider text-center col-12" data-content=""></div>
+                                <div class="divider text-center col-12" data-content=""></div>
                             </div>
                         </fieldset>
                     </div>

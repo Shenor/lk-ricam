@@ -2,7 +2,7 @@
 /*---Form-Fieldset--*/
 .content{
   .form-fieldset{
-    margin-top: .2rem;
+    margin-top: .5rem;
   }
 }
 
@@ -20,6 +20,10 @@
             margin-left: 20px;
             margin-bottom: 0;
             color: white;
+
+            span{
+              cursor: pointer;
+            }
         }
 
         .icon-edit-span-modal{

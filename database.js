@@ -13,6 +13,6 @@ mongoose.connect('mongodb://127.0.0.1:27017/clients', options)
     .then(console.log('MongoDB has started ...'))
     .catch((e) => console.log(e));
 
-const Client = mongoose.model('clients');
+const client = mongoose.model('Client');
 
-module.exports = {Client};
+module.exports = client;

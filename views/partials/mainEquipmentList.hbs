@@ -7,9 +7,10 @@
                     <thead>
                       <tr class="thead-2">
                         <th colspan="2">Фискальный <br> регистратор</th>
-                        <th colspan="5">Фискальный <br> накопитель</th>
+                        <th colspan="6">Фискальный <br> накопитель</th>
                       </tr>
                       <tr>
+                        <th>Касса</th>
                         <th>Модель</th>
                         <th>Серийный <br> номер</th>
                         <th>Срок(мес.)</th>
@@ -22,13 +23,59 @@
                     <tbody class="main-table" id="table-fiscal">
                          {{#each doc.fiscal}}                    
                             <tr>
-                              <td>{{ fiscalRegistr.fiscalModel }}</td>
+                              <td>{{ fiscalRegistr.fiscalOfd }}</td>
+                              <td data="fiscal">{{ fiscalRegistr.fiscalModel }}</td>
                               <td>{{ fiscalRegistr.fiscalSN }}</td>
-                              <td class="fnTime">{{ fiscalDrive.fiscalTime }}</td>
+                              <td data="fiscalDate">{{ fiscalDrive.fiscalTime }}</td>
                               <td>{{ fiscalDrive.fiscalSN }}</td>
-                              <td class="dateFn">{{ fiscalDrive.fiscalDate }}</td>
-                              <td class="fEndDate" readonly >{{ date.fEndDate }}</td>
-                              <td class="fLeftDate"readonly >{{ date.fLeftDate }}</td>
+                              <td>{{ fiscalDrive.fiscalDate }}</td>
+                              <td data="readonly" >
+                                {{#if date.fEndDate}}
+                                  {{ date.fEndDate }}
+                                {{else}}
+                                  Неизвестно
+                                {{/if}}
+                                </td>
+                              <td data="readonly" >
+                                {{#if date.fLeftDate}}
+                                 {{ date.fLeftDate }}
+                                {{else}}
+                                  Неизвестно
+                                {{/if}}
+                              </td>
+                            </tr>  
+                        {{/each}}
+                    </tbody>
+                  </table>
+                </div>
+              </fieldset>
+              <fieldset class="form-fieldset form-fieldset-equipmentList text-left">
+                <legend class="form-legend form-legend-equipment form-legend-ofd">ОФД<i class="icon icon-arrow-right"></i></legend>
+                 <div class = "content-equipment content-ofd">
+                 <table class="table table-hover text-center table-equipment">
+                    <thead>
+                      <tr>
+                        <th>Адрес ОФД</th>
+                        <th>Касса</th>
+                        <th>Логин</th>
+                        <th>Пароль</th>
+                        <th>Срок</th>
+                        <th>Дата <br> активации</th>
+                        <th>Дата <br> окончания</th>
+                        <th>Истекает</th>
+                      </tr>
+                    </thead>
+                    <tbody class="main-table" id="table-ofd">
+                         {{#each doc.ofd}}                    
+                            <tr>
+                              <td>{{ addressOfd }}</td>
+                              <td>{{ ofdkass }}</td>
+                              <td>{{ ofdLogin }}</td>
+                              <td>{{ ofdPassword}}</td>
+                              <td data="ofdTerm">{{ ofdTerm }}</td>
+                              <td>{{ ofdTime }}</td>
+                              <td data="readonly">{{ date.ofdEndDate }}</td>
+                              <td data="readonly">{{ date.ofdLeftDate }}</td>          
                             </tr>  
                         {{/each}}
                     </tbody>
@@ -59,7 +106,7 @@
                               <td>{{password}}</td>
                               <td>{{model}}</td>
                               <td>{{location}}</td>
-                              <td class="notes">{{notes}}</td>
+                              <td>{{notes}}</td>
                             </tr>
                         {{/each}}
                     </tbody>
@@ -80,17 +127,17 @@
                         <th>S/N</th>
                         <th>Диск</th>
                         <th>Состояние</th>
-                        <th class="notes">Примечание</th>
+                        <th>Примечание</th>
                       </tr>
                     </thead>
                     <tbody class="main-table" id="table-monoBlock">
                      {{#each doc.monoBlock}}
                             <tr>
-                              <td>{{this.model}}</td>
+                              <td data="mnbk">{{this.model}}</td>
                               <td>{{this.monoBlockSN}}</td>
-                              <td>{{this.hardDrive}}</td>
-                              <td>{{this.state}}</td>
-                              <td class="notes">{{this.notes}}</td>
+                              <td data="drive">{{this.hardDrive}}</td>
+                              <td data="state">{{this.state}}</td>
+                              <td>{{this.notes}}</td>
                             </tr>
                         {{/each}}
                     </tbody>
@@ -114,7 +161,7 @@
                     <tbody class="main-table" id="table-moneyBox">
                         {{#each doc.moneyBox}}
                             <tr>
-                              <td>{{this.moneyBoxModel}}</td>
+                              <td data="moneyBox">{{this.moneyBoxModel}}</td>
                               <td>{{this.moneyBoxNumber}}</td>
                             </tr>
                         {{/each}}
@@ -136,9 +183,9 @@
                     <tbody class="main-table" id="table-printer">
                      {{#each doc.printer}}
                             <tr>
-                              <td>{{this.printerModel}}</td>
+                              <td data="prnt">{{this.printerModel}}</td>
                               <td>{{this.printerNumber}}</td>
-                              <td>{{this.printerConnectionType}}</td>
+                              <td data="typeCon">{{this.printerConnectionType}}</td>
                             </tr>
                         {{/each}}
                     </tbody>
@@ -160,7 +207,7 @@
                     <tbody class="main-table" id="table-barcodeScanner">
                      {{#each doc.barcodeScanner}}
                             <tr>
-                              <td>{{this.scannerModel}}</td>
+                              <td data="barcodeScanner">{{this.scannerModel}}</td>
                               <td>{{this.scannerNumber}}</td>
                             </tr>
                         {{/each}}
@@ -182,9 +229,9 @@
                     <tbody class="main-table" id="table-libra">
                      {{#each doc.libra}}
                             <tr>
-                              <td>{{this.libraModel}}</td>
+                              <td data="libra">{{this.libraModel}}</td>
                               <td>{{this.libraNumber}}</td>
-                              <td>{{this.libraConnectionType}}</td>
+                              <td data="typeCon">{{this.libraConnectionType}}</td>
                             </tr>
                         {{/each}}
                     </tbody>

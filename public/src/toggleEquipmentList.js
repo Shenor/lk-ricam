@@ -8,6 +8,10 @@ export default function toggleEquipmentList () {
         $(".content-moneybox").slideToggle();
       });
 
+    $(".form-legend-ofd").click(() => {
+      $(".content-ofd").slideToggle();
+    });
+
     $(".form-legend-monoblock").click(() => {
         $(".content-monoblock").slideToggle();
       });

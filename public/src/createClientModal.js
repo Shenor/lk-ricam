@@ -91,6 +91,12 @@ $(document).on('click', '.phone', () => {
      });
 });
 
+$(document).on('click', '.ofd-date', () => {
+    jQuery(function($){    
+        $(".ofd-date").mask("99.99.9999");
+     });
+});
+
 $(document).on('click', '.fn-date', () => {
     jQuery(function($){    
         $(".fn-date").mask("99.99.9999");
@@ -103,6 +109,15 @@ $(".fn-date").blur(() => {
         $(".fn-date").addClass("error");
     } else {
         $(".fn-date").removeClass("error");
+    }
+});
+
+$(".ofd-date").blur(() => {
+    const dateEntered = $('.ofd-date').val();
+    if (!moment(dateEntered,'DD-MM-YYYY').isValid()) {
+        $(".ofd-date").addClass("error");
+    } else {
+        $(".ofd-date").removeClass("error");
     }
 });
 

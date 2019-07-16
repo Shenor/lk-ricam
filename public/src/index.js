@@ -11,8 +11,6 @@
   import DataService from '../service/DataService'
 
 document.addEventListener("DOMContentLoaded", function() {
-
-    const url = "http://192.168.1.25:3000";
     const dataService = new DataService(); 
 
     (async function main() {
@@ -26,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
     modals();
 
     //Create new Client
-    sendDataCreateClient(url);
+    sendDataCreateClient();
 
     //DeleteClient
     sendDataDeleteClient();

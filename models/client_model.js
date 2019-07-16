@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const {Schema, model} = require('mongoose');
 
 const ClientSchema = new Schema({
     name: {
@@ -9,7 +8,6 @@ const ClientSchema = new Schema({
     legalAdress: String,
     actualAdress: String,
     contractStatus: String,
-    dateEndFn: Date,
     contact: {
         type: [[String]]
     },
@@ -17,6 +15,9 @@ const ClientSchema = new Schema({
         type: [[String]]
     },
     fiscal: {
+        type: [Object]
+    },
+    ofd: {
         type: [Object]
     },
     barcodeScanner: {
@@ -39,4 +40,9 @@ const ClientSchema = new Schema({
     }
 });
 
-mongoose.model('clients', ClientSchema);
+ClientSchema.methods.saveClient = function(body) {
+    new ClientSchema(body);
+    return this.save();
+}
+
+model('Client', ClientSchema);

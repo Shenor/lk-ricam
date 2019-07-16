@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const {Client} = require('./../database');
+const Client = require('./../database');
 
 router.all('/', (req, res) => {
     Client.find({}, (err, docs) => {   
