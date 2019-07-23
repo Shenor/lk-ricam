@@ -1,0 +1,21 @@
+.login{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .card{
+    border-radius: 10px;
+    width: 500px;
+    margin: 5rem 0;
+
+    .card-title{
+     font-weight: 500; 
+    }
+
+    .card-image{
+      img{
+      border-radius: 10px 10px 0 0 !important;
+      }
+    }
+  }
+}

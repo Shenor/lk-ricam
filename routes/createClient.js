@@ -2,20 +2,25 @@ const express = require('express');
 const router = express.Router();
 
 const Client = require('../database');
+const auth = require('../middleware/shildRoutes');
 
-router.post('/', async (req, res) => {
-        const {name} = req.body;
-        const candidate = await Client.findOne({name});
-        
-        if(!candidate) {
-            const user = new Client(req.body); 
-            await user.save().catch((err) => console.log(err));
-            const count = await Client.find().estimatedDocumentCount();
-            console.log(count);
-            res.send({data: count - 1});
-        } else { 
-           res.send({error: "Такой пользователь уже есть"});
-        }
+function makeCounter() {
+    var currentCount = 1;
+  
+    return function() {
+      return currentCount++;
+    };
+}
+const counter = makeCounter();
+
+router.get('/', auth, async (req, res) =>{
+
+    const user = new Client({name: `Новый ${counter()}`}); 
+    await user.save();
+    const count = await Client.find().estimatedDocumentCount();
+    res.redirect(`/user/${count - 1}`)
+
 });
+
 
 module.exports = router;

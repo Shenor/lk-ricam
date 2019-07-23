@@ -1,0 +1,57 @@
+{
+<<<<<<< HEAD
+  "name": "Client",
+  "version": "1.0.0",
+  "description": "Пример личного кабинета с базой данных в формате json.",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.0",
+    "express-handlebars": "^3.1.0",
+    "express-hbs": "^2.1.2",
+    "express-session": "^1.16.2",
+    "hbs": "^4.0.4",
+    "moment": "^2.24.0",
+    "mongoose": "^5.5.10",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb": "^17.1.1",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "build": "webpack"
+=======
+  "name": "client-app",
+  "version": "2.0.0",
+  "description": "Приложение хранения данных пользователей",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+>>>>>>> Global Update
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shenor/userAkk.git"
+  },
+<<<<<<< HEAD
+  "keywords": [],
+  "author": "",
+=======
+  "keywords": [
+    "client",
+    "app"
+  ],
+  "author": "Drake Neit",
+>>>>>>> Global Update
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shenor/userAkk/issues"
+  },
+  "homepage": "https://github.com/Shenor/userAkk#readme"
+}

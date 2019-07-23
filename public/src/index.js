@@ -1,50 +1,55 @@
-  import modals from './modals';
-  import tabs from './tabs';
-  import selected from './selected';
-  import sendDataCreateClient from './sendDataCreateClient';
-  import sendDataDeleteClient from './sendDataDeleteClient';
-  import sendDataEditClient from './sendDataEditClient';
-  import createClientModal from './createClientModal';
-  import CreateClientBlocksEquipmentList from './CreateClientBlocksEquipmentList'
-  import toggleEquipmentList from './toggleEquipmentList';
-  import editorTD from './editorTD';
-  import DataService from '../service/DataService'
+import DataService from '../service/DataService'
+import Edit from './edit';
+import Del from './delete';
+
+M.Tabs.init(document.querySelectorAll(".tabs"));
+M.Modal.init(document.querySelectorAll(".modal"));
+M.FloatingActionButton.init(document.querySelectorAll('.fixed-action-btn'));
+M.Collapsible.init(document.querySelectorAll('.collapsible.expandable'), {
+  accordion: false
+});
+M.FormSelect.init(document.querySelector("#contractStatus"));
+
+$("#main-select").on("change", function() {
+  location.href = `/user/${$("#main-select").val()}`; 
+});
 
 document.addEventListener("DOMContentLoaded", function() {
-    const dataService = new DataService(); 
+  const dataService = new DataService(); 
 
-    (async function main() {
+  (async function main() { 
+    const mainData = await dataService.getAll(); 
+    const candidate = document.querySelector("#name");
+    const instance = await M.Chips.init(document.querySelectorAll(".chips"), {
+      autocompleteOptions: {
+        data: chip(mainData),
+        limit: Infinity,
+        minLength: 1
+      }
+    });
 
-    const data = await dataService.getAll();
+    function chip(dataAll) {
+      const data = {};
+      dataAll
+        .map((i) => { 
+          data[`${i.name}`] = null;
+         }); 
+        return data;
+    }
 
-    // Selected
-    selected(data);    
+    mainData
+      .map((arr, idx) => {   
+        if (candidate.value === arr.name){
+          $("#main-select").append($(`<option value = ${idx} selected >${arr.name}</option>`));
+        } else {
+          $("#main-select").append($(`<option value = ${idx}>${arr.name}</option>`));
+        }
+    });
 
-    //Modal
-    modals();
-
-    //Create new Client
-    sendDataCreateClient();
-
-    //DeleteClient
-    sendDataDeleteClient();
-
-    //EditClient
-    sendDataEditClient();
-
-    //Tabs
-    tabs();
-
-    //
-    createClientModal();
-
-    //
-    CreateClientBlocksEquipmentList();
-
-    //
-    toggleEquipmentList();
+    Del(dataService, instance);
     
-    editorTD();
+    Edit(dataService);
 
-  })();
-  });
+   })();
+});
+

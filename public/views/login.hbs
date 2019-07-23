@@ -1,0 +1,25 @@
+<div class="login">
+    <div class="columns">
+        <div class="hero bg-gray col-3 col-mx-auto">
+            <form action="/auth" method="POST" class="login">
+                {{#if isError }}
+                    <p class='login-error'>Неправильный логин или пароль</p>
+                {{/if}}
+                <!-- form validation class: has-success -->
+                <div class="form-group">
+                    <label class="form-label" for="name">Логин</label>
+                    <input class="form-input" name="name" type="text" id="name" placeholder="...">
+                </div>
+
+                <!-- form validation class: is-success -->
+                <div class="form-group">
+                    <label class="form-label" for="password">Пароль</label>
+                    <input class="form-input" name="password" type="password" id="password"
+                        placeholder="...">
+                </div>
+
+                <button type="submit" class="btn btn-primaly">Войти</button>
+            </form>
+        </div>
+    </div>
+</div>

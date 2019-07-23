@@ -13,7 +13,10 @@ router.get('/:id', auth, (req, res) => {
         const doc = docs[id];
 
         if(typeof doc == "undefined" && !doc) {
-            res.status(404).render('404');
+            res.status(404).render('404', {
+                layout: 'error',
+                title: "Страница не найдена"
+            });
         } else {
             setDate(doc);
             res.status(200).render('index', {

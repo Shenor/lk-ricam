@@ -1,0 +1,33 @@
+main{
+  padding-left: 350px;
+
+  .title-collapsible{
+    color: black;
+    font-weight: 500;
+  }
+
+  .collapsible-body {
+    padding: .5rem;
+  }
+
+  .tabs{
+    margin-top: .2rem;
+  }
+
+  table{
+    table-layout: fixed;
+  }
+
+  fieldset{
+    border: 1px solid rgba(0,0,0,0.14);
+  }
+
+  .mainLogo{
+    width: 17rem;
+    height: 4.3rem;
+  }
+
+  nav{
+    padding: 0 1rem;
+  }
+}
