@@ -10,7 +10,29 @@
     <li>
         <div class="row heder-slide">
             <div class="col s3 offset-s4">
-                <img class="responsive-img circle" alt="defaultPhoto" src="/img/defaultProfile-min.jpg" />
+                {{#if doc.avatarUrl}}
+                    <img 
+                        class="responsive-img circle avatar hoverable" 
+                        alt="defaultPhoto" 
+                        src="/{{ doc.avatarUrl }}" 
+                        title="avatar-{{ doc.name }}"/>
+                        
+                    <form action="/edit/avatar" method="POST" enctype="multipart/form-data">
+                        <input type="file" id="inp_file" name="avatar" onchange="this.form.submit()">
+                        <input type="hidden" name="id" value="{{ doc._id }}">
+                    </form>
+                {{else}}
+                    <img 
+                        class="responsive-img circle avatar hoverable" 
+                        alt="defaultPhoto" 
+                        src="/img/defaultProfile-min.jpg" 
+                        title="Изменить аватар"/>
+
+                    <form action="/edit/avatar" method="POST" enctype="multipart/form-data">
+                        <input type="file" id="inp_file" name="avatar" onchange="this.form.submit()">
+                        <input type="hidden" name="id" value="{{ doc._id }}">
+                    </form>
+                {{/if}}
             </div>
             <div class="input-field col s11">
                 <i class="material-icons prefix">account_circle</i>
@@ -107,9 +129,9 @@
                     {{/each}}
                     {{else}}
                     <tr>
-                        <td>...</td>
-                        <td>...</td>
-                        <td data="tel">...</td>
+                        <td> </td>
+                        <td> </td>
+                        <td data="tel"> </td>
                     </tr>
                     {{/if}}
                 </tbody>
@@ -122,22 +144,25 @@
                         <th>Программа</th>
                         <th>id</th>
                         <th>Место</th>
+                        <th>Пароль</th>
                     </tr>
                 </thead>
                 <tbody class="main-table" id="table-connect">
                     {{#if doc.connect.length}}
                     {{#each doc.connect}}
                     <tr>
-                        <td>{{this.[0]}}</td>
+                        <td data="prog">{{this.[0]}}</td>
                         <td>{{this.[1]}}</td>
                         <td>{{this.[2]}}</td>
+                        <td>{{this.[3]}}</td>
                     </tr>
                     {{/each}}
                     {{else}}
                     <tr>
-                        <td>...</td>
-                        <td>...</td>
-                        <td>...</td>
+                        <td data="prog">  </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
                     </tr>
                     {{/if}}
                 </tbody>
@@ -194,14 +219,14 @@
                                 </tr>
                                 {{/each}}
                                 {{else}}
-                                <td>...</td>
-                                <td data="fiscal">...</td>
-                                <td>...</td>
-                                <td data="fiscalDate">...</td>
-                                <td>...</td>
-                                <td>...</td>
-                                <td data="readonly">...</td>
-                                <td data="readonly">...</td>
+                                <td> </td>
+                                <td data="fiscal"> </td>
+                                <td> </td>
+                                <td data="fiscalDate"> </td>
+                                <td> </td>
+                                <td data="date"> </td>
+                                <td data="readonly"> </td>
+                                <td data="readonly"> </td>
                                 {{/if}}
                             </tbody>
                         </table>
@@ -214,8 +239,8 @@
                         <table class="table highlight centered table-equipment">
                             <thead>
                                 <tr>
-                                    <th>Адрес ОФД</th>
                                     <th>Касса</th>
+                                    <th>Адрес ОФД</th>
                                     <th>Логин</th>
                                     <th>Пароль</th>
                                     <th>Срок</th>
@@ -228,8 +253,8 @@
                                 {{#if doc.ofd}}
                                 {{#each doc.ofd}}
                                 <tr>
-                                    <td>{{ addressOfd }}</td>
                                     <td>{{ ofdkass }}</td>
+                                    <td data="ofd">{{ addressOfd }}</td>
                                     <td>{{ ofdLogin }}</td>
                                     <td>{{ ofdPassword}}</td>
                                     <td data="ofdTerm">{{ ofdTerm }}</td>
@@ -248,14 +273,14 @@
                                 {{/each}}
                                 {{else}}
                                 <tr>
-                                    <td>...</td>
-                                    <td>...</td>
-                                    <td>...</td>
-                                    <td>...</td>
-                                    <td data="ofdTerm">...</td>
-                                    <td>...</td>
-                                    <td data="readonly">...</td>
-                                    <td data="readonly">...</td>
+                                    <td> </td>
+                                    <td data="ofd"> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td data="ofdTerm"> </td>
+                                    <td data="date"> </td>
+                                    <td data="readonly"> </td>
+                                    <td data="readonly"> </td>
                                 </tr>
                                 {{/if}}
                             </tbody>
@@ -293,11 +318,11 @@
                                 {{/each}}
                                 {{else}}
                                 <tr>
-                                    <td>...</td>
-                                    <td>...</td>
-                                    <td>...</td>
-                                    <td>...</td>
-                                    <td>...</td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
+                                    <td> </td>
                                 </tr>
                                 {{/if}}
                             </tbody>
@@ -335,10 +360,10 @@
                                 {{/each}}
                                 {{else}}
                                 <tr>
-                                    <td data="mnbk">...</td>
-                                    <td>...</td>
-                                    <td data="drive">...</td>
-                                    <td data="state">...</td>
+                                    <td data="mnbk"> </td>
+                                    <td> </td>
+                                    <td data="drive"> </td>
+                                    <td data="state"> </td>
                                     <td>...</td>
                                 </tr>
                                 {{/if}}
@@ -371,8 +396,8 @@
                                         {{/each}}
                                         {{else}}
                                         <tr>
-                                            <td data="moneyBox">...</td>
-                                            <td>...</td>
+                                            <td data="moneyBox"> </td>
+                                            <td> </td>
                                         </tr>
                                         {{/if}}
                                     </tbody>
@@ -402,10 +427,10 @@
                                         {{/each}}
                                         {{else}}
                                         <tr>
-                                            <td data="prnt">...</td>
-                                            <td>...</td>
-                                            <td data="typeCon">...</td>
-                                        </tr>
+                                            <td data="prnt"> </td>
+                                            <td> </td>
+                                            <td data="typeCon"> </td>
+                                        </ 
                                         {{/if}}
 
                                     </tbody>
@@ -438,8 +463,8 @@
                                         {{/each}}
                                         {{else}}
                                         <tr>
-                                            <td data="barcodeScanner">...</td>
-                                            <td>...</td>
+                                            <td data="barcodeScanner"> </td>
+                                            <td> </td>
                                         </tr>
                                         {{/if}}
 
@@ -470,9 +495,9 @@
                                         {{/each}}
                                         {{else}}
                                         <tr>
-                                            <td data="libra">...</td>
-                                            <td>...</td>
-                                            <td data="typeCon">...</td>
+                                            <td data="libra"> </td>
+                                            <td> </td>
+                                            <td data="typeCon"> </td>
                                         </tr>
                                         {{/if}}
                                     </tbody>

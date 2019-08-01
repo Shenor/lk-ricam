@@ -44,32 +44,20 @@ export default function edit(dataService) {
         fiscalDrive: {}
       };
 
-      body.fiscal[idx].fiscalRegistr.fiscalOfd = $(element).children(
-        "td"
-      )[0].textContent;
-      body.fiscal[idx].fiscalRegistr.fiscalModel = $(element).children(
-        "td"
-      )[1].textContent;
-      body.fiscal[idx].fiscalRegistr.fiscalSN = $(element).children(
-        "td"
-      )[2].textContent;
-      body.fiscal[idx].fiscalDrive.fiscalTime = $(element).children(
-        "td"
-      )[3].textContent;
-      body.fiscal[idx].fiscalDrive.fiscalSN = $(element).children(
-        "td"
-      )[4].textContent;
-      body.fiscal[idx].fiscalDrive.fiscalDate = $(element).children(
-        "td"
-      )[5].textContent;
+      body.fiscal[idx].fiscalRegistr.fiscalOfd = $(element).children("td")[0].textContent;
+      body.fiscal[idx].fiscalRegistr.fiscalModel = $(element).children("td")[1].textContent;
+      body.fiscal[idx].fiscalRegistr.fiscalSN = $(element).children("td")[2].textContent;
+      body.fiscal[idx].fiscalDrive.fiscalTime = $(element).children("td")[3].textContent;
+      body.fiscal[idx].fiscalDrive.fiscalSN = $(element).children("td")[4].textContent;
+      body.fiscal[idx].fiscalDrive.fiscalDate = $(element).children("td")[5].textContent;
     });
 
     $("#table-ofd tr").each((idx, element) => {
       body.ofd[idx] = {};
-      body.ofd[idx].addressOfd = $(element).children("td")[0].textContent;
-      body.ofd[idx].ofdLogin = $(element).children("td")[1].textContent;
-      body.ofd[idx].ofdPassword = $(element).children("td")[2].textContent;
-      body.ofd[idx].ofdkass = $(element).children("td")[3].textContent;
+      body.ofd[idx].ofdkass = $(element).children("td")[0].textContent;
+      body.ofd[idx].addressOfd = $(element).children("td")[1].textContent;
+      body.ofd[idx].ofdLogin = $(element).children("td")[2].textContent;
+      body.ofd[idx].ofdPassword = $(element).children("td")[3].textContent;
       body.ofd[idx].ofdTerm = $(element).children("td")[4].textContent;
       body.ofd[idx].ofdTime = $(element).children("td")[5].textContent;
     });
@@ -138,6 +126,7 @@ export default function edit(dataService) {
       const { idx } = data;
       M.toast({
         html: `Данные успешно сохранены!`,
+        displayLength: 2300,
         completeCallback: () => {
           location.href = `/user/${idx}`;
         }

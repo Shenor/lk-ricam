@@ -2,6 +2,8 @@ const express = require('express');
 const morgan = require('morgan');
 const expressHbs = require('express-handlebars');
 const session = require('express-session');
+const helmet = require('helmet');
+const compression = require('compression');
 const MongoStore = require('connect-mongodb-session')(session);
 
 const indexRouter = require('./routes/indexRouter');
@@ -15,6 +17,7 @@ const authRouter = require('./routes/auth');
 
 const errorHandler = require('./middleware/error');
 const varMiddleware = require('./middleware/variables'); 
+const fileMiddleware = require('./middleware/file');
 
 const app  = express();
 
@@ -37,6 +40,7 @@ const store = new MongoStore({
 
 app.use(morgan('dev'));
 app.use((express.static(__dirname + '/public')));
+app.use('/images', (express.static(__dirname + '/images')));
 app.use(express.urlencoded({extended: true}));
 app.use(session({
     secret: 'some secrect string',
@@ -44,7 +48,10 @@ app.use(session({
     saveUninitialized: false,
     store
 }));
+app.use(helmet());
+app.use(compression());
 app.use(varMiddleware);
+app.use(fileMiddleware.single('avatar'));
 
 app.use(headersRouter);
 app.use('/', indexRouter);

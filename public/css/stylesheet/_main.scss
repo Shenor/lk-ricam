@@ -16,6 +16,19 @@ main{
 
   table{
     table-layout: fixed;
+    td{
+      height: 50px;
+    }
+  }
+
+  table.highlight{
+    tbody{
+      tr{
+        &:hover{
+          background-color: rgba(87, 86, 86, 0.25) !important;
+        }
+      }
+    }
   }
 
   fieldset{

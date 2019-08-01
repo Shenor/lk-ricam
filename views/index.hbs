@@ -12,7 +12,14 @@
     <li>
         <div class="row heder-slide">
             <div class="col s3 offset-s4">
-                <img class="responsive-img circle" alt="defaultPhoto" src="/img/defaultProfile-min.jpg" />
+                {{#if doc.avatarUrl}}
+                    <img 
+                        class="responsive-img circle" 
+                        alt="avatar-{{ doc.name }}" 
+                        src="/{{ doc.avatarUrl }}" />
+                {{else}}
+                    <img class="responsive-img circle" alt="defaultPhoto" src="/img/defaultProfile-min.jpg" />
+                {{/if}}
             </div>
             <div class="input-field col s11">
                 <i class="material-icons prefix">account_circle</i>
@@ -117,6 +124,7 @@
                         <th>Программа</th>
                         <th>id</th>
                         <th>Место</th>
+                        <th>Пароль</th>
                     </tr>
                 </thead>
                 <tbody class="main-table" id="table-connect">
@@ -126,10 +134,12 @@
                         <td>{{this.[0]}}</td>
                         <td>{{this.[1]}}</td>
                         <td>{{this.[2]}}</td>
+                        <td>{{this.[3]}}</td>
                     </tr>
                     {{/each}}
                     {{else}}
                     <tr>
+                        <td>...</td>
                         <td>...</td>
                         <td>...</td>
                         <td>...</td>
@@ -209,8 +219,8 @@
                         <table class="table highlight centered table-equipment">
                             <thead>
                                 <tr>
-                                    <th>Адрес ОФД</th>
                                     <th>Касса</th>
+                                    <th>Адрес ОФД</th>
                                     <th>Логин</th>
                                     <th>Пароль</th>
                                     <th>Срок</th>
@@ -223,8 +233,8 @@
                                 {{#if doc.ofd}}
                                 {{#each doc.ofd}}
                                 <tr>
-                                    <td>{{ addressOfd }}</td>
                                     <td>{{ ofdkass }}</td>
+                                    <td>{{ addressOfd }}</td>
                                     <td>{{ ofdLogin }}</td>
                                     <td>{{ ofdPassword}}</td>
                                     <td data="ofdTerm">{{ ofdTerm }}</td>

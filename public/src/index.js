@@ -46,6 +46,14 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    $('.avatar').click(() => {
+      $('#inp_file').click();
+    });
+
+    $('#inp_file').on('change', () => {
+      console.log($(this));
+    });
+
     Del(dataService, instance);
     
     Edit(dataService);

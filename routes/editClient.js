@@ -24,4 +24,16 @@ router.post('/', async (req, res) => {
     });
 });
 
+router.post('/avatar', async (req, res) => {
+    const doc = await Client.findOne({_id: req.body.id});
+    const toChange = {};
+
+    if(req.file){  
+       toChange.avatarUrl = req.file.path;
+    }
+    Object.assign(doc, toChange);
+    await doc.save();
+    res.redirect(`/edit/${req.body.id}`);
+});
+
 module.exports = router;

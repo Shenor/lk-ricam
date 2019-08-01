@@ -9,6 +9,7 @@ export default function del(dataService, instance) {
       .then(
         M.toast({
           html: `${body} были удалены!`,
+          displayLength: 2300,
           completeCallback: () => {
             window.location = "/user/0";
           }

@@ -1,6 +1,6 @@
 class DataService {
   constructor() {
-    this.url = "http://192.168.1.25:3000"; //192.168.1.25
+    this.url = "http://194.177.21.105:3000"; //194.177.21.105
   }
 
   editClient(body) {

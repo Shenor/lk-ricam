@@ -18,7 +18,7 @@
   $(".main-table").on("dblclick", ev => {
     let target = ev.target;
     const attr = $(target).attr("data");
-    const typeAttr = ["fiscal", "fiscalDate", "mnbk", "barcodeScanner", "moneyBox", "drive", "state", "prnt", "typeCon", "libra", "ofdTerm"];
+    const typeAttr = ["fiscal", "fiscalDate", "ofd", "mnbk", "barcodeScanner", "moneyBox", "drive", "state", "prnt", "typeCon", "libra", "ofdTerm", "prog"];
 
     if (typeof attr != typeof undefined && attr == "readonly") {
       return false;
@@ -115,6 +115,16 @@
                       <option>Shtrih</option>
                     </select>
                   `)
+        .set("ofd", `
+                    <select class="browser-default">
+                      <option disabled selected>-Выберите адрес-</option>
+                      <option>Платформа ОФД</option>
+                      <option>1 ОФД</option>
+                      <option>Яндекс ОФД</option>
+                      <option>Эвотор ОФД</option>
+                      <option>Контур ОФД</option>
+                    </select>
+                  `)
       .set("mnbk", `
                     <select class="browser-default">
                       <option>POSBANK APEXA G</option>
@@ -191,6 +201,14 @@
                     <option value="12">12 мес.</option>
                     <option value="36">36 мес.</option>
                     </select>
-                    `);
+                    `)
+      .set("prog", `
+                    <select class="browser-default">
+                    <option disabled selected>-Выберите программу-</option>
+                    <option value="AmmyAdmin">AmmyAdmin</option>
+                    <option value="AnyDesk">AnyDesk</option>
+                    <option value="TeamViewer">TeamViewer</option>
+                    </select>
+      `);
     return selectData.get(type);
   }

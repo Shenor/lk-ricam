@@ -15,11 +15,16 @@ const counter = makeCounter();
 
 router.get('/', auth, async (req, res) =>{
 
-    const user = new Client({name: `Новый ${counter()}`}); 
-    await user.save();
-    const count = await Client.find().estimatedDocumentCount();
-    res.redirect(`/user/${count - 1}`)
-
+    const doc = new Client({name: `Новый ${counter()}`}); 
+    await doc.save();
+    const all = await Client.find({});
+    all.forEach((c, idx) => {
+       if(c.name === doc.name){
+         res.redirect(`/user/${idx}`);
+       } else {
+        return false;
+       }
+    });
 });
 
 
