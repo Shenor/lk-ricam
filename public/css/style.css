@@ -18,8 +18,11 @@ main { padding-left: 350px; }
 main .title-collapsible { color: black; font-weight: 500; }
 main .collapsible-body { padding: .5rem; }
 main .tabs { margin-top: .2rem; }
+main #actualAdress { word-wrap: break-word; background: black; }
+main .upSort { transform: rotate(180deg); }
 main table { table-layout: fixed; }
 main table td { height: 50px; }
+main table th { cursor: pointer; }
 main table.highlight tbody tr:hover { background-color: rgba(87, 86, 86, 0.25) !important; }
 main fieldset { border: 1px solid rgba(0, 0, 0, 0.14); }
 main .mainLogo { width: 17rem; height: 4.3rem; }

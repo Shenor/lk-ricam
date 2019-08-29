@@ -26,6 +26,11 @@
                 <input disabled type="text" class="validate left-align" value="{{ doc.name }}" id="name">
                 <label for="icon_prefix">Название</label>
             </div>
+             <div class="input-field col s11">
+                <i class="material-icons prefix">build</i>
+                <textarea disabled class="materialize-textarea">{{ doc.versionIiko }}</textarea>
+                <label for="icon_prefix">Версия iiko</label>
+            </div>
             <div class="input-field col s11">
                 <i class="material-icons prefix">business_center</i>
                 <input disabled type="text" class="validate left-align" value="{{ doc.contractStatus }}">
@@ -38,7 +43,7 @@
             </div>
             <div class="input-field col s11">
                 <i class="material-icons prefix">location_city</i>
-                <input disabled type="text" class="validate left-align" value="{{ doc.actualAdress }}">
+                <textarea disabled  id="actualAdress" class="materialize-textarea">{{ doc.actualAdress }}</textarea>
                 <label for="icon_prefix">Фактический адрес</label>
             </div>
     </li>
@@ -125,6 +130,7 @@
                         <th>id</th>
                         <th>Место</th>
                         <th>Пароль</th>
+                        <th>Адр. сервера</th>
                     </tr>
                 </thead>
                 <tbody class="main-table" id="table-connect">
@@ -135,10 +141,12 @@
                         <td>{{this.[1]}}</td>
                         <td>{{this.[2]}}</td>
                         <td>{{this.[3]}}</td>
+                        <td>{{this.[4]}}</td>
                     </tr>
                     {{/each}}
                     {{else}}
                     <tr>
+                        <td>...</td>
                         <td>...</td>
                         <td>...</td>
                         <td>...</td>

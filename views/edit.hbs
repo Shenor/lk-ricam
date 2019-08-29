@@ -39,6 +39,11 @@
                 <input type="text" class="validate left-align" id="name" value="{{ doc.name }}">
                 <label for="name">Название</label>
             </div>
+             <div class="input-field col s11">
+                <i class="material-icons prefix">build</i>
+                <input type="text" class="validate left-align" id="versionIiko" value="{{ doc.versionIiko }}">
+                <label for="versionIkko">Версия iiko</label>
+            </div>
             <div class="input-field col s11">
                 <i class="material-icons prefix">business_center</i>
                 {{#status doc.contractStatus }}
@@ -145,6 +150,7 @@
                         <th>id</th>
                         <th>Место</th>
                         <th>Пароль</th>
+                        <th>Адр. сервера</th>
                     </tr>
                 </thead>
                 <tbody class="main-table" id="table-connect">
@@ -155,11 +161,13 @@
                         <td>{{this.[1]}}</td>
                         <td>{{this.[2]}}</td>
                         <td>{{this.[3]}}</td>
+                        <td>{{this.[4]}}</td>
                     </tr>
                     {{/each}}
                     {{else}}
                     <tr>
                         <td data="prog">  </td>
+                        <td> </td>
                         <td> </td>
                         <td> </td>
                         <td> </td>

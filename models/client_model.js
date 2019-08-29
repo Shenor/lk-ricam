@@ -7,6 +7,7 @@ const ClientSchema = new Schema({
     },
     legalAdress: String,
     actualAdress: String,
+    versionIiko: String,
     contractStatus: String,
     avatarUrl: String,
     contact: {

@@ -11,7 +11,7 @@ export default function del(dataService, instance) {
           html: `${body} были удалены!`,
           displayLength: 2300,
           completeCallback: () => {
-            window.location = "/user/0";
+            window.location = "/";
           }
         })
       )

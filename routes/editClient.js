@@ -13,15 +13,8 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
     await Client.replaceOne({_id: req.body.id}, req.body);
-    const all = await Client.find({});
-    const doc = await Client.findOne({_id: req.body.id});
-    all.forEach((c, idx) => {
-       if(c.name === doc.name){
-         res.send({idx});
-       } else {
-        return false;
-       }
-    });
+    const doc = await Client.findOne({_id: req.body.id}).select("_id");
+    res.send(doc);
 });
 
 router.post('/avatar', async (req, res) => {

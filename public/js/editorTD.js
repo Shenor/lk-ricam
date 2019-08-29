@@ -177,6 +177,7 @@
                     <option>ATOL RP226</option>
                     <option>SPARK PP</option>
                     <option>Sam4s</option>
+		    <option>Zebra ZD410</option>
                     </select>
                     `)
       .set("typeCon", `
@@ -208,6 +209,7 @@
                     <option value="AmmyAdmin">AmmyAdmin</option>
                     <option value="AnyDesk">AnyDesk</option>
                     <option value="TeamViewer">TeamViewer</option>
+                    <option value="RDP">RDP</option>
                     </select>
       `);
     return selectData.get(type);

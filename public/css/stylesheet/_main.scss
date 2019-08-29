@@ -14,10 +14,23 @@ main{
     margin-top: .2rem;
   }
 
+  #actualAdress{
+    word-wrap: break-word;
+    background: black;
+  }
+
+  .upSort{
+    transform: rotate(180deg);
+  }
+
   table{
     table-layout: fixed;
     td{
       height: 50px;
+    }
+
+    th{
+      cursor: pointer;
     }
   }
 

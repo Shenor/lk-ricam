@@ -5,25 +5,20 @@ const moment = require('moment');
 const Client = require('./../database');
 const auth = require('../middleware/shildRoutes');
 
-router.get('/:id', auth, (req, res) => {
-    const id = req.params.id;
-
-    Client.find({}, (err, docs) => {
-        if(err){console.log(err);}
-        const doc = docs[id];
-
-        if(typeof doc == "undefined" && !doc) {
-            res.status(404).render('404', {
-                layout: 'error',
-                title: "Страница не найдена"
-            });
-        } else {
-            setDate(doc);
-            res.status(200).render('index', {
-                doc
-            });
-        }     
-    });
+router.get('/:id', auth, async (req, res) => {
+    try {
+        const doc = await Client.findById(req.params.id);
+        setDate(doc);
+        res.render('index', {
+            doc
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(404).render('404', {
+            layout: 'error',
+            title: "Страница не найдена"
+        });
+    }
 });
 
 global.setDate = (doc) => {

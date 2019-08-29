@@ -5,6 +5,7 @@ export default function edit(dataService) {
       name: document.querySelector("#name").value,
       legalAdress: document.querySelector("#legalAdress").value,
       actualAdress: document.querySelector("#actualAdress").value,
+      versionIiko: document.querySelector("#versionIiko").value,
       contractStatus: $("#contractStatus").val(),
       contact: [],
       connect: [],
@@ -123,12 +124,12 @@ export default function edit(dataService) {
     });
 
     dataService.editClient(body).then(data => {
-      const { idx } = data;
+      console.log(data);
       M.toast({
         html: `Данные успешно сохранены!`,
         displayLength: 2300,
         completeCallback: () => {
-          location.href = `/user/${idx}`;
+          location.href = `/user/${data._id}`;
         }
       });
     });
