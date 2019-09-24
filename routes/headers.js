@@ -1,7 +1,7 @@
  function headers(req, res, next) {
 
     // Сайт, к которому вы хотите подключиться
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000'); //http://lk.ricam.ru
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000'); 
 
     // Request vетоды, которые вы хотите разрешить
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');

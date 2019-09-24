@@ -12,6 +12,7 @@ const getDatabaseRouter = require('./routes/getDatabase');
 const createClientRouter = require('./routes/createClient');
 const deleteClientRouter = require('./routes/deleteClient');
 const editClientRouter = require('./routes/editClient');
+const reportClientRouter = require('./routes/reportClient');
 const headersRouter = require('./routes/headers');
 const authRouter = require('./routes/auth');
 
@@ -61,6 +62,7 @@ app.use('/database', getDatabaseRouter);
 app.use('/create', createClientRouter);
 app.use('/delete', deleteClientRouter);
 app.use('/edit', editClientRouter);
+app.use('/report', reportClientRouter);
 
 app.use(errorHandler);
 

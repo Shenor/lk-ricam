@@ -16,9 +16,10 @@
                     <img 
                         class="responsive-img circle" 
                         alt="avatar-{{ doc.name }}" 
-                        src="/{{ doc.avatarUrl }}" />
+                        src="/{{ doc.avatarUrl }}" 
+                        id="avatar"/>
                 {{else}}
-                    <img class="responsive-img circle" alt="defaultPhoto" src="/img/defaultProfile-min.jpg" />
+                    <img class="responsive-img circle" alt="defaultPhoto" src="/img/defaultProfile-min.jpg" id="avatar"/>
                 {{/if}}
             </div>
             <div class="input-field col s11">
@@ -60,6 +61,11 @@
     <li>
         <a class="modal-trigger" href="#modal1">
             Удалить клиента
+        </a>
+    </li>
+    <li>
+        <a class="report" href="/report">
+           Отчет ФН
         </a>
     </li>
 </ul>

@@ -6,6 +6,7 @@ export default function edit(dataService) {
       legalAdress: document.querySelector("#legalAdress").value,
       actualAdress: document.querySelector("#actualAdress").value,
       versionIiko: document.querySelector("#versionIiko").value,
+      avatarUrl: document.querySelector("#avatar").src,
       contractStatus: $("#contractStatus").val(),
       contact: [],
       connect: [],

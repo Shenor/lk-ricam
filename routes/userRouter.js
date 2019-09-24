@@ -9,9 +9,11 @@ router.get('/:id', auth, async (req, res) => {
     try {
         const doc = await Client.findById(req.params.id);
         setDate(doc);
+        console.log(doc);
         res.render('index', {
             doc
         });
+        console.log(doc);
     } catch (error) {
         console.log(error);
         res.status(404).render('404', {

@@ -31,6 +31,10 @@
         background-color: rgba(0, 0, 0, 0.05);
       }
     }
+
+    .report{
+      border-top: 1px solid rgba(0, 0, 0, 0.14);
+    }
   }
 
   .logo-content {
@@ -58,6 +62,10 @@
     cursor: pointer;
   }
 
+  img{
+    height: 64px;
+  }
+  
   #inp_file{
     width: 1px;
     height: 1px;

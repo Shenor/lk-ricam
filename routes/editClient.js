@@ -26,6 +26,8 @@ router.post('/avatar', async (req, res) => {
     }
     Object.assign(doc, toChange);
     await doc.save();
+    console.log('Сохранено')
+    console.log(doc);
     res.redirect(`/edit/${req.body.id}`);
 });
 

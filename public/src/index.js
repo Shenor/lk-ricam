@@ -2,6 +2,7 @@ import DataService from '../service/DataService'
 import Edit from './edit';
 import Del from './delete';
 
+
 M.Tabs.init(document.querySelectorAll(".tabs"));
 M.Modal.init(document.querySelectorAll(".modal"));
 M.FloatingActionButton.init(document.querySelectorAll('.fixed-action-btn'));

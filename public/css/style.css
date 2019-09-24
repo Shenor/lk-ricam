@@ -8,10 +8,12 @@
 .slide .titile-action { font-weight: 500; }
 .slide li a { color: black; display: block; font-size: 14px; font-weight: 500; line-height: 48px; height: 48px; padding: 0 1rem; }
 .slide li a:hover { background-color: rgba(0, 0, 0, 0.05); }
+.slide li .report { border-top: 1px solid rgba(0, 0, 0, 0.14); }
 .slide .logo-content { height: 64px; border-bottom: 1px solid rgba(0, 0, 0, 0.14); background-color: whitesmoke; }
 .slide .logo-content .logo-img { width: 4rem; height: 4rem; padding: 0.2rem; margin-right: 1rem; }
 .slide .logo-content .browser-default { background-color: inherit; border: none; margin-left: 1rem; font-size: 16px; font-weight: 500; }
 .slide .avatar { cursor: pointer; }
+.slide img { height: 64px; }
 .slide #inp_file { width: 1px; height: 1px; visibility: hidden; }
 
 main { padding-left: 350px; }

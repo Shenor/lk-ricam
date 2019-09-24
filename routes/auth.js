@@ -14,7 +14,7 @@ router.post("/", (req, res) => {
       req.session.save(err => {
         if (err){throw err}
         
-        res.redirect("/user/0");
+        res.redirect("/");
       });
     } else {
       res.render("login", {
