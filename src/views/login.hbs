@@ -1,0 +1,26 @@
+<div class="container login">
+    <div class="card">
+        <div class="card-image">
+            <img src="/img/nature.jpg">
+            <span class="card-title">RICAM</span>
+        </div>
+        <div class="card-content">
+            <form action="/auth" method="POST" class="login">
+                {{#if isError }}
+                    <div class="p-2 mb-3 red lighten-3">
+                        <p class='login-error white-text'>Неправильный логин или пароль</p>
+                    </div>
+                {{/if}}
+                <div class="input-field">
+                    <input id="name" name="name" type="text" class="validate">
+                    <label for="name">Логин</label>
+                </div> 
+                <div class="input-field">
+                    <input id="password" name="password" type="password" class="validate">
+                    <label for="password">Пароль</label>
+                </div>
+                <button type="submit" class="btn btn-primaly">Войти</button>
+            </form> 
+        </div>
+    </div>
+</div>

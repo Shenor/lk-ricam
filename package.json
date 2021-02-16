@@ -1,37 +1,46 @@
 {
-  "name": "Client",
+  "name": "lk.ricam",
   "version": "2.0.0",
   "description": "Пример личного кабинета с базой данных в формате json.",
   "main": "server.js",
+  "scripts": {
+    "start": "concurrently --kill-others \"npm run watch-webpack\" \"npm run watch-nodemon\"",
+    "watch-webpack": "webpack --wathch",
+    "watch-nodemon": "nodemon -e hbs ./app.js",
+    "build": "webpack"
+  },
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "body-parser": "^1.19.0",
+    "choices.js": "^9.0.1",
     "compression": "^1.7.4",
-    "connect-mongodb-session": "^2.2.0",
-    "express": "^4.17.0",
+    "concurrently": "^5.3.0",
+    "connect-mongodb-session": "^2.4.1",
+    "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
-    "express-hbs": "^2.1.2",
-    "express-session": "^1.16.2",
-    "hbs": "^4.0.4",
-    "helmet": "^3.19.0",
-    "lodash": ">=4.17.13",
-    "moment": "^2.24.0",
-    "mongoose": "^5.7.5",
-    "morgan": "^1.9.1",
+    "express-hbs": "^2.3.4",
+    "express-session": "^1.17.1",
+    "hbs": "^4.1.1",
+    "helmet": "^3.23.3",
+    "lodash": "^4.17.20",
+    "mongoose": "^5.11.15",
+    "morgan": "^1.10.0",
     "multer": "^1.4.2",
-    "nodemon": "^1.19.0",
-    "uuid": "^3.3.2"
+    "nanoid": "^3.1.20",
+    "nodemon": "^1.19.4",
+    "uuid": "^3.4.0"
   },
   "devDependencies": {
-    "eslint": "^6.0.1",
+    "@babel/core": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
+    "babel-loader": "^8.2.2",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0",
     "eslint-config-airbnb": "^17.1.1",
-    "webpack": "^4.32.2",
-    "webpack-cli": "^3.3.2",
-    "eslint-utils": ">=1.4.1"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js",
-    "build": "webpack"
+    "eslint-utils": "^2.1.0",
+    "luxon": "^1.25.0",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12"
   },
   "repository": {
     "type": "git",

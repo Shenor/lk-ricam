@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> header }}
+  <title>
+    {{#if title}}
+      {{title}}
+    {{else}}
+      Личный кабинет Ricam
+    {{/if}}
+  </title>
+</head>
+
+<body class="{{ classLoginScreen }}">
+    {{{ body }}}
+    {{> footer}}
+</body>
+
+</html>

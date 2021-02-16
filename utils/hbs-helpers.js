@@ -1,6 +1,5 @@
 module.exports = {
   status(value, options) {
-      console.log(value);
     return options
       .fn(this)
       .split("\n")

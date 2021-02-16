@@ -1,16 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const Client = require('./../database');
+const Client = require('../src/models/client_model');
+const auth = require('./../middleware/auth');
 
-router.get('/', (req, res) => {  
-    if(!req.session.isAuthenticated) {
-        res.redirect('/auth');
-    } else {
-        Client.find({}, (err, doc) => {
-            if(err){throw err}
-            res.render('index', doc[0]);
-        });
-    }        
+router.get('/', auth, async (req, res) => {
+    const firstUser = await Client.findOne();
+    res.redirect(`/users/${firstUser._id}`);   
 });
 
 module.exports = router;

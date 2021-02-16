@@ -1,18 +1,14 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-require('./models/client_model');
+const connectDB = async () => {
+    const conn = await mongoose.connect(`mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`, {
+        useUnifiedTopology: true,
+        useNewUrlParser: true,
+        family: 4
+    });
 
-mongoose.Promise = global.Promise;
+    console.log(`MongoDB Connected: ${conn.connection.host}:${conn.connection.port}`);
+}
 
-const options = {
-    useNewUrlParser: true,
-    family: 4
-};
-
-mongoose.connect('mongodb://127.0.0.1:27017/clients', options)
-    .then(console.log('MongoDB has started ...'))
-    .catch((e) => console.log(e));
-
-const client = mongoose.model('Client');
-
-module.exports = client;
+module.exports = connectDB;
