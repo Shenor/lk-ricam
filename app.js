@@ -19,7 +19,7 @@ const auth = require("./middleware/auth");
 
 const connectDB = require('./database');
 const app  = express();
-require('dotenv').config();
+require('dotenv').config({path: process.env.NODE_ENV === 'production' ? './.production.env' : './.env'});
 
 app.set('views', (__dirname, 'src/views'));
 app.set('view engine', 'hbs');
@@ -33,7 +33,7 @@ app.engine('hbs', expressHbs({
 
 const store = new MongoStore({
     collection: 'sessions',
-    uri: `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`
+    uri: `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}:${process.env.DB_PORT}`
 });
 
 app.use(morgan('dev'));
@@ -61,5 +61,5 @@ app.use(errorHandler);
 
 connectDB();
 
-app.listen(3000, () => console.log(`Server running http://localhost:3000`));
+app.listen(3001, () => console.log(`Server running`));
 

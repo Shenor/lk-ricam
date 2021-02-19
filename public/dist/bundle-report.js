@@ -8415,6 +8415,7 @@ var dateNow = luxon__WEBPACK_IMPORTED_MODULE_0__["DateTime"].local();
       outColRelativeDate = _ref$outColRelativeDa === void 0 ? 'td:eq(8)' : _ref$outColRelativeDa;
   $(selector).each(function (idx, row) {
     var cellTerm = $(row).find(numColTerm).html();
+    if (cellTerm == '...' || cellTerm.trim() == '') return;
     var cellStartDate = $(row).find(numColStartDate).html();
     var endDate = luxon__WEBPACK_IMPORTED_MODULE_0__["DateTime"].fromFormat(cellStartDate, 'dd.MM.yyyy').plus({
       months: +cellTerm
@@ -8440,7 +8441,7 @@ var dateNow = luxon__WEBPACK_IMPORTED_MODULE_0__["DateTime"].local();
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_date_helper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../utils/date-helper */ "../../utils/date-helper.js");
 
-$(document).ready(function () {
+$("#tableFN_wrapper, #tableOFD_wrapper").ready(function () {
   $("#tableFN, #tableOFD").DataTable({
     columns: [null, {
       orderable: false
@@ -8460,6 +8461,16 @@ $(document).ready(function () {
     selector: '#tableOFD #table-contacts tr, #tableFN #table-contacts tr',
     numColTerm: 'td:eq(5)',
     numColStartDate: 'td:eq(6)'
+  });
+  $('#tableFN_wrapper, #tableOFD_wrapper').click(function (e) {
+    var targetClass = e.target.className.trim();
+    if (!targetClass.includes('paginate_button')) return;
+    Object(_utils_date_helper__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      selector: '#tableOFD #table-contacts tr, #tableFN #table-contacts tr',
+      numColTerm: 'td:eq(5)',
+      numColStartDate: 'td:eq(6)'
+    });
+    console.log("Success");
   });
 });
 

@@ -24206,6 +24206,7 @@ var dateNow = luxon__WEBPACK_IMPORTED_MODULE_0__["DateTime"].local();
       outColRelativeDate = _ref$outColRelativeDa === void 0 ? 'td:eq(8)' : _ref$outColRelativeDa;
   $(selector).each(function (idx, row) {
     var cellTerm = $(row).find(numColTerm).html();
+    if (cellTerm == '...' || cellTerm.trim() == '') return;
     var cellStartDate = $(row).find(numColStartDate).html();
     var endDate = luxon__WEBPACK_IMPORTED_MODULE_0__["DateTime"].fromFormat(cellStartDate, 'dd.MM.yyyy').plus({
       months: +cellTerm

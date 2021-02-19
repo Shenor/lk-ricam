@@ -4,8 +4,9 @@
   "description": "Пример личного кабинета с базой данных в формате json.",
   "main": "server.js",
   "scripts": {
-    "start": "concurrently --kill-others \"npm run watch-webpack\" \"npm run watch-nodemon\"",
-    "watch-webpack": "webpack --wathch",
+    "start": "NODE_ENV=production && node ./app.js",
+    "dev": "concurrently --kill-others \"npm run watch-webpack\" \"npm run watch-nodemon\"",
+    "watch-webpack": "webpack",
     "watch-nodemon": "nodemon -e hbs ./app.js",
     "build": "webpack"
   },
