@@ -17,7 +17,7 @@
     "compression": "^1.7.4",
     "concurrently": "^5.3.0",
     "connect-mongodb-session": "^2.4.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-handlebars": "^3.1.0",
     "express-hbs": "^2.3.4",
     "express-session": "^1.17.1",
